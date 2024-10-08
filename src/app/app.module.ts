@@ -1,26 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { ReservationComponent } from './reservation/reservation.component';
-import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { HeaderComponent } from './partial/header/header.component';
+import { FormsModule } from '@angular/forms';
+import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     ReservationComponent,
-    RegisterComponent,
     HomeComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    LoginComponent,
+    RegisterComponent,
+    HeaderComponent,
+    TravelcycleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

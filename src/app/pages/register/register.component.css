@@ -1,0 +1,87 @@
+/* ฟอนต์และการตั้งค่าเบื้องต้น */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e9ecef;
+}
+
+/* Sign Up Section */
+.signup-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #00c851, #007e33); /* เปลี่ยนเป็นสีเขียว gradient */
+}
+
+.form-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+  transform: translateY(-10px); /* ขยับขึ้นเล็กน้อยเมื่อ hover */
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #00c851; /* เปลี่ยนสีขอบเป็นสีเขียว */
+  outline: none;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to right, #00c851, #007e33); /* เปลี่ยนปุ่มเป็น gradient สีเขียว */
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-image 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-image: linear-gradient(to right, #007e33, #00c851); /* สลับสีเขียวเมื่อ hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+}
+
+/* เอฟเฟกต์เพิ่มเงา */
+.form-group input {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}

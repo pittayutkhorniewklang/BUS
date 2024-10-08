@@ -1,0 +1,162 @@
+/* ฟอนต์และการตั้งค่าเบื้องต้น */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Hero Section (ส่วนหัวเว็บไซต์) */
+  .hero-section {
+    background-image: url('https://files.oaiusercontent.com/file-iETXRhZFjr8CMJBD8jNS05NX?se=2024-10-03T14%3A59%3A46Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D1b6ee04c-fd2d-493b-93e2-bfcb3fbcd1f5.webp&sig=eTN0yzq2%2ByZym/OeYL0hsYhDqCfIDzDXRJ/zeEV0dqw%3D'); /* ใส่ URL ของรูปภาพที่คุณต้องการใช้ */
+    background-size: cover; /* ปรับให้รูปครอบคลุมเต็มพื้นที่ */
+    background-position: center; /* จัดตำแหน่งรูปให้อยู่ตรงกลาง */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+/* ฟอนต์มีมิติด้วยการเพิ่มเงา */
+.hero-section h1 {
+    font-size: 4rem; /* ขนาดฟอนต์ใหญ่ขึ้น */
+    font-weight: bold;
+    color: rgb(49, 177, 68);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* เงาฟอนต์ให้ดูมีมิติ */
+    letter-spacing: 1px; /* เพิ่มระยะห่างระหว่างตัวอักษร */
+}
+
+.hero-section p {
+    font-size: 1.5rem; /* ขนาดฟอนต์ของข้อความย่อย */
+    color: rgb(45, 161, 49);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* เงาเล็กกว่าสำหรับข้อความย่อย */
+}
+
+  
+  .hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-section .btn {
+    background-color: #fff;
+    color: #4caf50;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-section .btn:hover {
+    background-color: #388e3c;
+    color: white;
+  }
+  
+  /* ค้นหาการเดินทาง */
+  .reservation-section {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  .reservation-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  .btn-success {
+    background-color: #4caf50;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .btn-success:hover {
+    background-color: #388e3c;
+  }
+  
+  /* บริการ */
+  .services-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .services-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .service-box {
+    background-color: rgb(217, 217, 217);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+  }
+  
+  .service-box i {
+    font-size: 40px;
+    color: #4caf50;
+    margin-bottom: 20px;
+  }
+  
+  .service-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .service-box p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  

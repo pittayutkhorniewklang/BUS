@@ -1,0 +1,28 @@
+<section class="signup-section">
+  <div class="form-container">
+    <h2>สมัครสมาชิก</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">ชื่อผู้ใช้</label>
+        <input type="text" class="form-control" id="username" placeholder="กรอกชื่อผู้ใช้" [(ngModel)]="username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">อีเมล</label>
+        <input type="email" class="form-control" id="email" placeholder="กรอกอีเมล" [(ngModel)]="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">รหัสผ่าน</label>
+        <input type="password" class="form-control" id="password" placeholder="กรอกรหัสผ่าน" [(ngModel)]="password" name="password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">ยืนยันรหัสผ่าน</label>
+        <input type="password" class="form-control" id="confirm-password" placeholder="กรอกยืนยันรหัสผ่าน" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">สมัครสมาชิก</button>
+    </form>
+  </div>
+</section>

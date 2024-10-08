@@ -1,15 +1,26 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import path from 'path';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { HeaderComponent } from './partial/header/header.component';
+import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component';
 
 const routes: Routes = [
-  {path : 'home',component:HomeComponent},
-  
+  { path: '', component: HomeComponent },
+  { path: 'reservation', component: ReservationComponent },
+  { path: 'contact-us', component:ContactUsComponent},
+  {path : 'login', component:LoginComponent},
+  {path : 'register',component:RegisterComponent},
+ {path :'header',component:HeaderComponent},
+ {path : 'travelcycle',component:TravelcycleComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
+  
 })
 export class AppRoutingModule { }

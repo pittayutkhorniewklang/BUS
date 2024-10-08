@@ -1,0 +1,89 @@
+/* ใช้ Flexbox เพื่อจัดฟอร์มให้อยู่ตรงกลาง */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #00c851, #007e33); /* พื้นหลังแบบ gradient สีเขียว */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container ของฟอร์ม Login */
+.login-container {
+  background-color: white;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.login-container:hover {
+  transform: translateY(-10px); /* ขยับฟอร์มขึ้นเมื่อ hover */
+}
+
+/* Style ของหัวข้อ */
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+/* เพิ่ม spacing ระหว่าง label และ input */
+.login-container .form-group label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* เพิ่ม style สำหรับ input */
+.login-container .form-control {
+  padding: 12px;
+  border-radius: 30px; /* โค้งมนมากขึ้น */
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animation เมื่อโฟกัส input */
+.login-container .form-control:focus {
+  border-color: #00c851; /* ใช้สีเขียวอ่อน */
+  box-shadow: 0 0 8px rgba(0, 200, 81, 0.5); /* เงาสีเขียว */
+  outline: none;
+}
+
+/* ปุ่ม Login */
+.login-container .btn {
+  background-image: linear-gradient(to right, #00c851, #007e33); /* สีเขียว gradient */
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 30px; /* โค้งมนเหมือน input */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-image 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container .btn:hover {
+  background-image: linear-gradient(to right, #007e33, #00c851); /* สลับสีเมื่อ hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+}
+
+/* ลิงก์สำหรับ Forgot Password */
+.login-container a {
+  color: #00c851;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+  color: #007e33; /* เปลี่ยนสีลิงก์เมื่อ hover */
+  text-decoration: underline;
+}
