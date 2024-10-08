@@ -8,7 +8,7 @@ body {
   
   /* Hero Section (ส่วนหัวเว็บไซต์) */
   .hero-section {
-    background-image: url('https://files.oaiusercontent.com/file-iETXRhZFjr8CMJBD8jNS05NX?se=2024-10-03T14%3A59%3A46Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D1b6ee04c-fd2d-493b-93e2-bfcb3fbcd1f5.webp&sig=eTN0yzq2%2ByZym/OeYL0hsYhDqCfIDzDXRJ/zeEV0dqw%3D'); /* ใส่ URL ของรูปภาพที่คุณต้องการใช้ */
+    background-image: url('https://img.pikbest.com/wp/202405/bus-passenger-3d-illustration-of-a-template-for-city-transport_9858585.jpg!sw800');
     background-size: cover; /* ปรับให้รูปครอบคลุมเต็มพื้นที่ */
     background-position: center; /* จัดตำแหน่งรูปให้อยู่ตรงกลาง */
     height: 100vh;
@@ -23,14 +23,14 @@ body {
 .hero-section h1 {
     font-size: 4rem; /* ขนาดฟอนต์ใหญ่ขึ้น */
     font-weight: bold;
-    color: rgb(49, 177, 68);
+    color: rgb(255, 255, 255);
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* เงาฟอนต์ให้ดูมีมิติ */
     letter-spacing: 1px; /* เพิ่มระยะห่างระหว่างตัวอักษร */
 }
 
 .hero-section p {
     font-size: 1.5rem; /* ขนาดฟอนต์ของข้อความย่อย */
-    color: rgb(45, 161, 49);
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* เงาเล็กกว่าสำหรับข้อความย่อย */
 }
 
@@ -48,7 +48,7 @@ body {
   
   .hero-section .btn {
     background-color: #fff;
-    color: #4caf50;
+    color: #000000;
     padding: 10px 20px;
     border-radius: 25px;
     font-size: 16px;
@@ -57,51 +57,11 @@ body {
   }
   
   .hero-section .btn:hover {
-    background-color: #388e3c;
+    background-color: #20cbff;
     color: white;
   }
   
-  /* ค้นหาการเดินทาง */
-  .reservation-section {
-    padding: 50px 20px;
-    background-color: #f5f5f5;
-    text-align: center;
-  }
   
-  .reservation-section h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #333;
-  }
-  
-  .form-container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-control {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-  }
-  
-  .btn-success {
-    background-color: #4caf50;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .btn-success:hover {
-    background-color: #388e3c;
-  }
   
   /* บริการ */
   .services-section {
@@ -132,7 +92,7 @@ body {
   
   .service-box i {
     font-size: 40px;
-    color: #4caf50;
+    color: #20cbff;
     margin-bottom: 20px;
   }
   

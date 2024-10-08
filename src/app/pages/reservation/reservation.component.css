@@ -8,7 +8,7 @@ body {
   
   /* Hero Section */
   .hero-section {
-    background-image: url('https://files.oaiusercontent.com/file-iETXRhZFjr8CMJBD8jNS05NX?se=2024-10-03T14%3A59%3A46Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D1b6ee04c-fd2d-493b-93e2-bfcb3fbcd1f5.webp&sig=eTN0yzq2%2ByZym/OeYL0hsYhDqCfIDzDXRJ/zeEV0dqw%3D'); /* เปลี่ยนเป็น URL ของรูปภาพที่คุณต้องการ */
+    background-image: url('https://img.pikbest.com/wp/202405/bus-passenger-3d-illustration-of-a-template-for-city-transport_9858585.jpg!sw800'); /* เปลี่ยนเป็น URL ของรูปภาพที่คุณต้องการ */
     background-size: cover;
     background-position: center;
     height: 60vh;
@@ -100,4 +100,49 @@ body {
     margin: 0;
     font-size: 14px;
   }
-  
+  .seat-selection-section {
+    margin: 20px 0;
+}
+
+.seats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.seat {
+    width: 50px;
+    height: 50px;
+    background-color: #28a745; /* สีเขียวสำหรับที่นั่งว่าง */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.seat.selected {
+    background-color: #007bff; /* สีฟ้าสำหรับที่นั่งที่เลือก */
+}
+
+.seat:hover {
+    background-color: #218838; /* สีเขียวเข้มเมื่อ hover */
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    background-color: #007bff; /* สีฟ้าสำหรับปุ่มยืนยัน */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* สีฟ้าเข้มเมื่อ hover */
+}
+

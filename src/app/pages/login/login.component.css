@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, #00c851, #007e33); /* พื้นหลังแบบ gradient สีเขียว */
+  background: linear-gradient(to right, #00aaff, #005f99); /* พื้นหลังแบบ gradient สีฟ้า */
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@
   max-width: 400px;
   width: 100%;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* เพิ่มมิติให้กับกล่องฟอร์ม */
   text-align: center;
   transition: transform 0.3s ease-in-out;
 }
@@ -53,14 +53,14 @@
 
 /* Animation เมื่อโฟกัส input */
 .login-container .form-control:focus {
-  border-color: #00c851; /* ใช้สีเขียวอ่อน */
-  box-shadow: 0 0 8px rgba(0, 200, 81, 0.5); /* เงาสีเขียว */
+  border-color: #00aaff; /* ใช้สีฟ้าอ่อน */
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.5); /* เงาสีฟ้า */
   outline: none;
 }
 
 /* ปุ่ม Login */
 .login-container .btn {
-  background-image: linear-gradient(to right, #00c851, #007e33); /* สีเขียว gradient */
+  background-image: linear-gradient(to right, #00aaff, #005f99); /* สีฟ้า gradient */
   border: none;
   color: white;
   padding: 12px;
@@ -72,18 +72,18 @@
 }
 
 .login-container .btn:hover {
-  background-image: linear-gradient(to right, #007e33, #00c851); /* สลับสีเมื่อ hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+  background-image: linear-gradient(to right, #005f99, #00aaff); /* สลับสีเมื่อ hover */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อ hover */
 }
 
 /* ลิงก์สำหรับ Forgot Password */
 .login-container a {
-  color: #00c851;
+  color: #00aaff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .login-container a:hover {
-  color: #007e33; /* เปลี่ยนสีลิงก์เมื่อ hover */
+  color: #005f99; /* เปลี่ยนสีลิงก์เมื่อ hover */
   text-decoration: underline;
 }

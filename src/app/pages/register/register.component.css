@@ -13,14 +13,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right, #00c851, #007e33); /* เปลี่ยนเป็นสีเขียว gradient */
+  background-image: linear-gradient(to right, #00aaff, #005f99); /* เปลี่ยนเป็นสีฟ้า gradient */
 }
 
 .form-container {
   background-color: white;
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* เพิ่มมิติให้กับกล่องฟอร์ม */
   max-width: 400px;
   width: 100%;
   text-align: center;
@@ -60,12 +60,13 @@ h2 {
 }
 
 .form-control:focus {
-  border-color: #00c851; /* เปลี่ยนสีขอบเป็นสีเขียว */
+  border-color: #00aaff; /* เปลี่ยนสีขอบเป็นสีฟ้า */
   outline: none;
+  box-shadow: 0 0 8px rgba(0, 170, 255, 0.5); /* เงาสีฟ้าเมื่อโฟกัส */
 }
 
 .btn-primary {
-  background-image: linear-gradient(to right, #00c851, #007e33); /* เปลี่ยนปุ่มเป็น gradient สีเขียว */
+  background-image: linear-gradient(to right, #00aaff, #005f99); /* เปลี่ยนปุ่มเป็น gradient สีฟ้า */
   border: none;
   color: white;
   padding: 12px;
@@ -77,8 +78,8 @@ h2 {
 }
 
 .btn-primary:hover {
-  background-image: linear-gradient(to right, #007e33, #00c851); /* สลับสีเขียวเมื่อ hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+  background-image: linear-gradient(to right, #005f99, #00aaff); /* สลับสีฟ้าเมื่อ hover */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อ hover */
 }
 
 /* เอฟเฟกต์เพิ่มเงา */

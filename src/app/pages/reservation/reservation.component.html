@@ -31,6 +31,22 @@
           </select>
         </div>
   
+        <section id="seat-selection" class="seat-selection-section">
+          <h2>เลือกที่นั่ง</h2>
+          <div class="form-container">
+              <div class="seats">
+                  <div 
+                      *ngFor="let seat of seats; let i = index" 
+                      class="seat" 
+                      [class.selected]="seat.selected" 
+                      (click)="toggleSeat(i)">
+                      {{ i + 1 }}
+                  </div>
+              </div>
+              <button class="btn btn-primary" (click)="confirmSelection()">ยืนยันการเลือกที่นั่ง</button>
+          </div>
+      </section>
+      
         <div class="form-group">
           <label for="date">วันที่เดินทาง</label>
           <input type="date" class="form-control" id="date" required>
