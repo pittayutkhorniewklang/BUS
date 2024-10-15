@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HeaderComponent } from './partial/header/header.component';
 import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component';
+import { UserComponent } from './pages/admin/user/user.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,8 @@ const routes: Routes = [
   {path : 'register',component:RegisterComponent},
  {path :'header',component:HeaderComponent},
  {path : 'travelcycle',component:TravelcycleComponent},
+ {path : 'admin/user' , component:UserComponent},
+ 
 ];
 
 @NgModule({

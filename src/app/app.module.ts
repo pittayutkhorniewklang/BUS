@@ -10,6 +10,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HeaderComponent } from './partial/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component';
+import { UserComponent } from './pages/admin/user/user.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,9 @@ import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component'
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    TravelcycleComponent
+    TravelcycleComponent,
+    UserComponent,
+   
   ],
   imports: [
     BrowserModule,
