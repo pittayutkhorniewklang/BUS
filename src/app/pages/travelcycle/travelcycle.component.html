@@ -1,74 +1,62 @@
 <header class="hero-section">
-    <div class="hero-content">
-      <h1>วางแผนการเดินทางของคุณ</h1>
-      <p>เริ่มต้นการเดินทางที่สมบูรณ์แบบกับเรา</p>
-      <a href="#plan" class="btn btn-primary">เริ่มวางแผน</a>
-    </div>
-  </header>
-  
-  <section id="reservation" class="reservation-section">
-    <h2>ค้นหาการเดินทาง</h2>
-    <div class="form-container">
-      <form>
-        <div class="form-group">
-          <label for="from">ต้นทาง</label>
-          <select class="form-control" id="from">
-            <option value="" disabled selected>เลือกต้นทาง</option>
-            <option value="bangkok">กรุงเทพ</option>
-            <option value="chiangmai">เชียงใหม่</option>
-            <option value="phuket">บางเเสน</option>
-            <option value="chonburi">ชลบุรี</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="to">ปลายทาง</label>
-          <select class="form-control" id="to">
-            <option value="" disabled selected>เลือกปลายทาง</option>
-            <option value="bangkok">กรุงเทพ</option>
-            <option value="chiangmai">เชียงใหม่</option>
-            <option value="phuket">บางเเสน</option>
-            <option value="chonburi">ชลบุรี</option>
-          </select>
-        </div>
-        
-        
-        <div class="form-group">
-          <label for="date">วันที่เดินทาง</label>
-          <input type="date" class="form-control" id="date">
-        </div>
-        <button type="submit" class="btn btn-success btn-block">ค้นหาการเดินทาง</button>
-      </form>
-    </div>
-  </section>
-  
-  <section id="plan" class="plan-section">
-    <h2>ขั้นตอนการวางแผนการเดินทาง</h2>
-    <div class="steps-container">
-      <div class="step-box">
-        <i class="bi bi-search"></i>
-        <h3>ค้นหาสถานที่</h3>
-        <p>ค้นหาสถานที่ที่คุณต้องการไปและรับข้อมูลสำคัญเกี่ยวกับสถานที่นั้นๆ</p>
-      </div>
-      <div class="step-box">
-        <i class="bi bi-calendar-check"></i>
-        <h3>จองการเดินทาง</h3>
-        <p>เลือกและจองการเดินทางตามแผนของคุณ</p>
-      </div>
-      <div class="step-box">
-        <i class="bi bi-car-front"></i>
-        <h3>เดินทาง</h3>
-        <p>เดินทางด้วยความสะดวกสบายและมั่นใจ</p>
-      </div>
-      <div class="step-box">
-        <i class="bi bi-chat-dots"></i>
-        <h3>แบ่งปันประสบการณ์</h3>
-        <p>แบ่งปันประสบการณ์และคำแนะนำเกี่ยวกับการเดินทางของคุณ</p>
-      </div>
-    </div>
-  </section>
-  
-  <footer class="footer">
-    <p>&copy; 2024 Travel Cycle. ทุกสิทธิ์ได้รับการสงวนลิขสิทธิ์.</p>
-  </footer>
-  
+  <div class="hero-content">
+    <h1>วางแผนการเดินทางของคุณ</h1>
+    <p>เริ่มต้นการเดินทางที่สมบูรณ์แบบกับเรา</p>
+  </div>
+</header>
+
+<section id="schedule" class="schedule-section my-5">
+  <h2 class="text-center mb-4">ตารางเวลาเดินรถ</h2> <!-- อยู่ตรงกลางโดยใช้ 'text-center' -->
+  <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+          <thead class="thead-dark">
+              <tr>
+                  <th>ต้นทาง</th>
+                  <th>ปลายทาง</th>
+                  <th>เวลาออกเดินทาง</th>
+                  <th>เวลาถึงที่หมาย</th>
+                  <th>รอบเดินทาง</th>
+                  <th>ราคาตั๋ว (บาท)</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>กรุงเทพ</td>
+                  <td>เชียงใหม่</td>
+                  <td>06:00 น.</td>
+                  <td>12:00 น.</td>
+                  <td>รอบเช้า</td>
+                  <td>500</td>
+              </tr>
+              <tr>
+                  <td>กรุงเทพ</td>
+                  <td>บางเเสน</td>
+                  <td>09:00 น.</td>
+                  <td>11:00 น.</td>
+                  <td>รอบเช้า</td>
+                  <td>200</td>
+              </tr>
+              <tr>
+                  <td>ชลบุรี</td>
+                  <td>กรุงเทพ</td>
+                  <td>13:00 น.</td>
+                  <td>15:00 น.</td>
+                  <td>รอบบ่าย</td>
+                  <td>180</td>
+              </tr>
+              <tr>
+                  <td>กรุงเทพ</td>
+                  <td>เชียงใหม่</td>
+                  <td>18:00 น.</td>
+                  <td>24:00 น.</td>
+                  <td>รอบเย็น</td>
+                  <td>500</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</section>
+
+<footer class="footer mt-5 py-3 bg-dark text-white text-center">
+  <p>&copy; 2024 Travel Cycle. ทุกสิทธิ์ได้รับการสงวนลิขสิทธิ์.</p>
+</footer>

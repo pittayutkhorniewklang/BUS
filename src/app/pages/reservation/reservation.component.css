@@ -8,7 +8,7 @@ body {
   
   /* Hero Section */
   .hero-section {
-    background-image: url('https://img.pikbest.com/wp/202405/bus-passenger-3d-illustration-of-a-template-for-city-transport_9858585.jpg!sw800'); /* เปลี่ยนเป็น URL ของรูปภาพที่คุณต้องการ */
+    background-image: url('https://patsornchaitour.com/wp-content/uploads/2022/10/%E0%B9%80%E0%B8%8A%E0%B9%88%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B8%9A%E0%B8%B1%E0%B8%AA-19.jpg'); /* เปลี่ยนเป็น URL ของรูปภาพที่คุณต้องการ */
     background-size: cover;
     background-position: center;
     height: 60vh;
@@ -119,30 +119,137 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(0, 0, 0);
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.seat.selected {
-    background-color: #007bff; /* สีฟ้าสำหรับที่นั่งที่เลือก */
+/* ปรับแต่งการจัดวางที่นั่ง */
+.seat-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #007bff;
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: #f8f9fa;
 }
 
 .seat:hover {
-    background-color: #218838; /* สีเขียวเข้มเมื่อ hover */
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.05);
 }
 
-.btn-primary {
-    padding: 10px 20px;
-    background-color: #007bff; /* สีฟ้าสำหรับปุ่มยืนยัน */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.seat.selected {
+  background-color: #28a745;
+  color: white;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3; /* สีฟ้าเข้มเมื่อ hover */
+/* ปรับแต่งการจัดวางที่นั่ง */
+.seat-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
+
+.seat {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #007bff;
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: #f8f9fa;
+}
+
+.seat:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.seat.selected {
+  background-color: #28a745;
+  color: white;
+}
+
+.aisle {
+  width: 30px; /* ช่องว่างระหว่างที่นั่ง */
+}
+
+.seat-selection-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.selected-seats {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  width: 300px; /* เพิ่มความกว้าง */
+}
+
+.selected-seat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* ให้ item ขยายเต็มความกว้าง */
+}
+
+.seat-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 60px;
+  text-align: center;
+}
+/* ปุ่มยืนยันการเลือกที่นั่ง */
+.confirm-button {
+  padding: 15px 40px; /* ขยายขนาดปุ่ม */
+  font-size: 1.2rem; /* ขนาดตัวอักษรใหญ่ขึ้น */
+  background-color: #007bff; /* สีปุ่ม */
+  color: white; /* สีข้อความ */
+  border: none; /* ไม่มีขอบ */
+  border-radius: 8px; /* ขอบโค้งมน */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อโฮเวอร์ */
+  transition: background-color 0.3s, transform 0.3s; /* เพิ่มการเปลี่ยนแปลงที่นุ่มนวล */
+}
+
+.confirm-button:hover {
+  background-color: #0056b3; /* สีปุ่มเมื่อโฮเวอร์ */
+  transform: scale(1.05); /* ขยายขนาดเมื่อโฮเวอร์ */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+.confirm-button:active {
+  transform: scale(0.98); /* ย่อขนาดปุ่มเล็กน้อยเมื่อกด */
+}
+
+
+
+
+
 

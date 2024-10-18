@@ -13,6 +13,7 @@ import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component'
 import { UserComponent } from './pages/admin/user/user.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { UserComponent } from './pages/admin/user/user.component';
     HeaderComponent,
     TravelcycleComponent,
     UserComponent,
+  
    
   ],
   imports: [

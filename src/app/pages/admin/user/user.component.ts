@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
+isSidebarOpen: any;
+toggleSidebar() {
+throw new Error('Method not implemented.');
+}
   users = [
     { name: 'สมชาย ใจดี', email: 'somchai@example.com', phone: '0812345678', status: 'Active' },
     { name: 'สมหญิง สวยงาม', email: 'somying@example.com', phone: '0891234567', status: 'Inactive' }

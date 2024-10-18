@@ -9,6 +9,7 @@ import { HeaderComponent } from './partial/header/header.component';
 import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component';
 import { UserComponent } from './pages/admin/user/user.component';
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'reservation', component: ReservationComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
  {path :'header',component:HeaderComponent},
  {path : 'travelcycle',component:TravelcycleComponent},
  {path : 'admin/user' , component:UserComponent},
+
  
 ];
 

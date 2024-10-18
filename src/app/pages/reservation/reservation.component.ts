@@ -3,35 +3,29 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
-  styleUrl: './reservation.component.css'
+  styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent {
-seatRows: any;
-confirmSelection() {
-throw new Error('Method not implemented.');
-}
- 
- seats = Array(20).fill(null).map(() => ({ selected: false }));
- toggleSeat(index: number) {
-  this.seats[index].selected = !this.seats[index].selected; // เปลี่ยนสถานะที่นั่ง
+  seats = Array(20).fill({}).map((_, index) => ({ number: index + 1, selected: false }));
+  selectedSeats: number[] = []; // เก็บหมายเลขที่นั่งที่ถูกเลือก
 
-  confirmSelection() ;{
-    const selectedSeats = this.seats
-      .map((seat, index) => (seat.selected ? index + 1 : null))
-      .filter(seat => seat !== null);
-    
-    if (selectedSeats.length > 0) {
-      alert(`คุณเลือกที่นั่ง: ${selectedSeats.join(', ')}`);
+  toggleSeat(index: number) {
+    this.seats[index].selected = !this.seats[index].selected;
+
+    if (this.seats[index].selected) {
+      this.selectedSeats.push(this.seats[index].number);
     } else {
-      alert('กรุณาเลือกที่นั่งก่อน!');
+      this.removeSeat(this.seats[index].number);
     }
-  
-}
-
-  
-
-   function confirmSelection() {
-     throw new Error('Function not implemented.');
-   }
   }
-};
+
+  removeSeat(seatNumber: number) {
+    // ยกเลิกการเลือกที่นั่งและอัปเดตสถานะ
+    this.seats[seatNumber - 1].selected = false;
+    this.selectedSeats = this.selectedSeats.filter(seat => seat !== seatNumber);
+  }
+
+  confirmSelection() {
+    alert('ที่นั่งที่คุณเลือก: ' + this.selectedSeats.join(', '));
+  }
+}
