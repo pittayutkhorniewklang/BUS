@@ -4,13 +4,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { HeaderComponent } from './partial/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component';
 import { UserComponent } from './pages/admin/user/user.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+
+
 
 
 
@@ -19,12 +21,16 @@ import { UserComponent } from './pages/admin/user/user.component';
     AppComponent,
     ReservationComponent,
     HomeComponent,
-    ContactUsComponent,
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
     TravelcycleComponent,
     UserComponent,
+    ContactUsComponent,
+  
+
+   
+    
   
    
   ],

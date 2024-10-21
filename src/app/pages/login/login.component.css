@@ -4,11 +4,15 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, #00aaff, #005f99); /* พื้นหลังแบบ gradient สีฟ้า */
+  background-image: url('https://www.dpa.or.th/storage/uploads/category/ii_sii_4fb59294a3fc72bd26e27a8078576910_i_he_i_65cf4d9b7f44a.jpg'); /* URL ของรูปภาพพื้นหลัง */
+  background-size: cover; /* ปรับขนาดให้เต็มหน้าจอ */
+  background-position: center; /* จัดรูปให้อยู่ตรงกลาง */
+  background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
 }
+
 
 /* Container ของฟอร์ม Login */
 .login-container {

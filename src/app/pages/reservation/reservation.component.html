@@ -1,93 +1,74 @@
-<header class="hero-section">
+  <header class="hero-section">
     <div class="hero-content text-center text-white">
-        <h1>จองตั๋วเดินทาง</h1>
-        <p>ค้นหาและจองตั๋วเดินทางที่สะดวกและง่ายดาย</p>
+      <h1>ค้นหาตั๋วรถโดยสารออนไลน์</h1>
+      <form class="search-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="from">ต้นทาง</label>
+            <select id="from" class="form-control">
+              <option value="" disabled selected>เลือกต้นทาง</option>
+              <option value="bangkok">กรุงเทพ</option>
+              <option value="chiangmai">เชียงใหม่</option>
+              <!-- เพิ่มเมืองที่ต้องการ -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="to">ปลายทาง</label>
+            <select id="to" class="form-control">
+              <option value="" disabled selected>เลือกปลายทาง</option>
+              <option value="bangkok">กรุงเทพ</option>
+              <option value="chiangmai">เชียงใหม่</option>
+              <!-- เพิ่มเมืองที่ต้องการ -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="date">วันที่เดินทาง</label>
+            <input type="date" id="date" class="form-control">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">ค้นหาตารางรถทัวร์</button>
+          </div>
+        </div>
+      </form>
     </div>
-</header>
+  </header>
 
-<section class="reservation-form-section container my-5">
-    <h2 class="text-center mb-4">กรอกข้อมูลการเดินทางของคุณ</h2>
-    <div class="form-container p-4 shadow rounded bg-light">
-        <form>
-            <div class="form-group mb-3">
-                <label for="from">ต้นทาง</label>
-                <select class="form-control" id="from" required>
-                    <option value="" disabled selected>เลือกต้นทาง</option>
-                    <option value="bangkok">กรุงเทพ</option>
-                    <option value="chiangmai">เชียงใหม่</option>
-                    <option value="phuket">บางเเสน</option>
-                    <option value="chonburi">ชลบุรี</option>
-                </select>
-            </div>
-
-            <div class="form-group mb-3">
-                <label for="to">ปลายทาง</label>
-                <select class="form-control" id="to" required>
-                    <option value="" disabled selected>เลือกปลายทาง</option>
-                    <option value="bangkok">กรุงเทพ</option>
-                    <option value="chiangmai">เชียงใหม่</option>
-                    <option value="phuket">บางเเสน</option>
-                    <option value="chonburi">ชลบุรี</option>
-                </select>
-            </div>
-
-            <!-- เพิ่มส่วนการเลือกเที่ยวรถ -->
-            <div class="form-group mb-3">
-                <label for="time">เที่ยวรถ</label>
-                <select class="form-control" id="time" required>
-                    <option value="" disabled selected>เลือกเที่ยวรถ</option>
-                    <option value="morning">รอบเช้า (6:00 - 9:00)</option>
-                    <option value="afternoon">รอบบ่าย (12:00 - 15:00)</option>
-                    <option value="evening">รอบเย็น (18:00 - 21:00)</option>
-                </select>
-            </div>
-            <div class="form-group mb-3">
-                <label for="date">วันที่เดินทาง</label>
-                <input type="date" class="form-control" id="date" required>
-            </div>
-
-            <section id="seat-selection" class="seat-selection-section mb-3 d-flex">
-                <div class="form-container p-3 shadow-sm rounded bg-white w-75">
-                    <h3 class="mb-3">เลือกที่นั่ง</h3>
-                    <div class="seats d-flex flex-wrap justify-content-center">
-                        <div class="row">
-                            <div class="seat-row" *ngFor="let seatRow of [0, 1, 2, 3, 4]; let rowIndex = index">
-                                <div 
-                                    *ngFor="let seat of seats.slice(rowIndex * 4, rowIndex * 4 + 2); let i = index" 
-                                    class="seat m-1 p-2 rounded text-center" 
-                                    [class.selected]="seat.selected" 
-                                    (click)="toggleSeat(rowIndex * 4 + i)">
-                                    {{ rowIndex * 4 + i + 1 }}
-                                </div>
-                                <div class="aisle"></div>
-                                <div 
-                                    *ngFor="let seat of seats.slice(rowIndex * 4 + 2, rowIndex * 4 + 4); let i = index" 
-                                    class="seat m-1 p-2 rounded text-center" 
-                                    [class.selected]="seat.selected" 
-                                    (click)="toggleSeat(rowIndex * 4 + i + 2)">
-                                    {{ rowIndex * 4 + i + 3 }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="confirm-button mt-3" type="button" (click)="confirmSelection()">ยืนยันการเลือกที่นั่ง</button>
-                </div>
-                <div class="selected-seats p-3 shadow-sm rounded bg-light ms-3 w-25">
-                    <h4>ที่นั่งที่เลือก</h4>
-                    <div *ngFor="let seat of selectedSeats" class="selected-seat-item d-flex align-items-center mb-2 p-2 rounded bg-white shadow-sm">
-                        <div class="seat-number badge bg-success me-3">
-                            ที่นั่ง {{ seat }}
-                        </div>
-                        <button class="btn btn-sm btn-outline-danger" (click)="removeSeat(seat)">ยกเลิก</button>
-                    </div>
-                </div>
-            </section>
-            
-        </form>
+    
+  <section class="popular-routes-section container my-5">
+    <div class="row">
+      <!-- เพิ่มไอคอน/ข้อมูล ทำไมต้องจอง -->
     </div>
-</section>
 
+    <h3 class="section-title">ตั๋วรถทัวร์จากกรุงเทพที่นิยม</h3>
+    
+    <!-- ทำให้ตารางเลื่อนด้วย .table-responsive -->
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>ปลายทาง</th>
+              <th>ราคา</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>กรุงเทพไปเชียงใหม่</td>
+              <td>622 บาท+</td>
+            </tr>
+            <tr>
+              <td>กรุงเทพไปชลบุรี</td>
+              <td>544 บาท+</td>
+            </tr>
+            <!-- เพิ่มเส้นทางรถทัวร์ที่นิยม -->
+          </tbody>
+        </table>
+    </div>
+  </section>
 
-<footer class="footer mt-5 py-3 bg-dark text-white text-center">
-    <p>&copy; 2024 ระบบจองตั๋วออนไลน์. ทุกสิทธิ์ได้รับการสงวนลิขสิทธิ์.</p>
-</footer>
+  <footer class="footer">
+    <p>&copy; 2024 ระบบติดต่อเรา. สงวนลิขสิทธิ์.</p>
+  </footer>
+    
+    
+    
+    

@@ -1,255 +1,182 @@
 /* ฟอนต์และการตั้งค่าเบื้องต้น */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Hero Section */
-  .hero-section {
-    background-image: url('https://patsornchaitour.com/wp-content/uploads/2022/10/%E0%B9%80%E0%B8%8A%E0%B9%88%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B8%9A%E0%B8%B1%E0%B8%AA-19.jpg'); /* เปลี่ยนเป็น URL ของรูปภาพที่คุณต้องการ */
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: rgb(255, 255, 255);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hero-section h1 {
-    font-size: 4rem; /* ขนาดของฟอนต์ */
-    font-weight: bold; /* ความหนาของฟอนต์ */
-    color: rgb(255, 255, 255); /* สีของฟอนต์ */
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* เงาฟอนต์ */
-}
-
-.hero-section p {
-    font-size: 1.5rem; /* ขนาดของข้อความย่อย */
-    color: rgb(255, 255, 255); /* สีของฟอนต์ข้อความย่อย */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เงาฟอนต์ข้อความย่อย */
-}
-
-  
-  .hero-content h1 {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .hero-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-  
-  /* Reservation Form Section */
-  .reservation-form-section {
-    padding: 50px 20px;
-    background-color: #f8f9fa;
-    text-align: center;
-  }
-  
-  .reservation-form-section h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #333;
-  }
-  
-  .form-container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-control {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
-    color: white;
-  }
-  
-  .footer p {
-    margin: 0;
-    font-size: 14px;
-  }
-  .seat-selection-section {
-    margin: 20px 0;
-}
-
-.seats {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.seat {
-    width: 50px;
-    height: 50px;
-    background-color: #28a745; /* สีเขียวสำหรับที่นั่งว่าง */
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-/* ปรับแต่งการจัดวางที่นั่ง */
-.seat-row {
+/* Hero Section */
+.hero-section {
+  background-image: url('https://patsornchaitour.com/wp-content/uploads/2022/10/%E0%B9%80%E0%B8%8A%E0%B9%88%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B8%9A%E0%B8%B1%E0%B8%AA-19.jpg'); /* เปลี่ยนเป็น URL ของรูปภาพที่คุณต้องการ */
+  background-size: cover;
+  background-position: center;
+  height: 70vh; /* ลดขนาดของรูป */
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
-}
-
-.seat {
-  width: 50px;
-  height: 50px;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: 1px solid #007bff;
-  transition: background-color 0.3s, transform 0.3s;
-  background-color: #f8f9fa;
-}
-
-.seat:hover {
-  background-color: #007bff;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-.seat.selected {
-  background-color: #28a745;
+  text-align: center;
   color: white;
 }
 
-/* ปรับแต่งการจัดวางที่นั่ง */
-.seat-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.seat {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: 1px solid #007bff;
-  transition: background-color 0.3s, transform 0.3s;
-  background-color: #f8f9fa;
-}
-
-.seat:hover {
-  background-color: #007bff;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-.seat.selected {
-  background-color: #28a745;
-  color: white;
-}
-
-.aisle {
-  width: 30px; /* ช่องว่างระหว่างที่นั่ง */
-}
-
-.seat-selection-section {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-}
-
-.selected-seats {
-  max-height: 400px;
-  overflow-y: auto;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
+/* คอนเทนต์ใน Hero Section */
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
-  background-color: #f8f9fa;
-  width: 300px; /* เพิ่มความกว้าง */
-}
-
-.selected-seat-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%; /* ให้ item ขยายเต็มความกว้าง */
 }
 
-.seat-number {
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #28a745;
-  color: white;
-  padding: 5px 10px;
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* ปรับฟอร์มให้เป็นแนวนอน */
+.search-form .form-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* จัดฟิลด์และปุ่มให้อยู่ที่ขอบล่าง */
+  gap: 15px; /* ระยะห่างระหว่างองค์ประกอบ */
+}
+
+.search-form .form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* ทำให้ปุ่มอยู่แนวเดียวกับฟอร์ม */
+}
+
+/* ปรับขนาดของ select และ input ให้สอดคล้อง */
+.search-form .form-control {
+  padding: 10px;
   border-radius: 5px;
-  width: 60px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+/* ปุ่มค้นหา */
+.search-form .btn-primary {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff8c00;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.search-form .btn-primary:hover {
+  background-color: #e67e00;
+}
+
+/* จัดตำแหน่งปุ่มให้ตรง */
+.align-button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* ทำให้ปุ่มอยู่ตรงกับฟิลด์อื่น */
+}
+
+
+
+/* Popular Routes Section */
+.popular-routes-section {
+  padding: 50px 20px;
   text-align: center;
 }
-/* ปุ่มยืนยันการเลือกที่นั่ง */
-.confirm-button {
-  padding: 15px 40px; /* ขยายขนาดปุ่ม */
-  font-size: 1.2rem; /* ขนาดตัวอักษรใหญ่ขึ้น */
-  background-color: #007bff; /* สีปุ่ม */
-  color: white; /* สีข้อความ */
-  border: none; /* ไม่มีขอบ */
-  border-radius: 8px; /* ขอบโค้งมน */
-  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อโฮเวอร์ */
-  transition: background-color 0.3s, transform 0.3s; /* เพิ่มการเปลี่ยนแปลงที่นุ่มนวล */
+
+.popular-routes-section h2 {
+  margin-bottom: 30px;
+  color: #333;
 }
 
-.confirm-button:hover {
-  background-color: #0056b3; /* สีปุ่มเมื่อโฮเวอร์ */
-  transform: scale(1.05); /* ขยายขนาดเมื่อโฮเวอร์ */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+.table {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.confirm-button:active {
-  transform: scale(0.98); /* ย่อขนาดปุ่มเล็กน้อยเมื่อกด */
+.table th, .table td {
+  text-align: left;
 }
 
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+/* ฟอนต์และการตั้งค่าเบื้องต้น */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Section Title */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
+/* ตารางเดินรถ */
+.table-responsive {
+  margin: 20px auto;
+  max-width: 100%;
+  overflow-x: auto; /* ทำให้ตารางเลื่อนในแนวนอนได้ */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
 
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: collapse;
+}
 
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #dee2e6; /* ขอบตาราง */
+  font-size: 1rem;
+}
 
+.table thead {
+  background-color: #343a40; /* สีหัวตาราง */
+  color: white;
+  text-transform: uppercase; /* ทำให้ตัวอักษรในหัวตารางเป็นตัวพิมพ์ใหญ่ */
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* สีสลับแถว */
+}
+
+.table tbody tr:hover {
+  background-color: #e0f7fa; /* สีเมื่อโฮเวอร์ */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Responsive Design สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+  .table th, .table td {
+      padding: 10px;
+      font-size: 0.9rem;
+  }
+}
+/* Footer */
+.footer {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}

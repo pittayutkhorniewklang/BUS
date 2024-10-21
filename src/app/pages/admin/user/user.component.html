@@ -1,62 +1,61 @@
 <section class="user-management">
-    <h2>จัดการผู้ใช้</h2>
-    
-    <div class="user-table-container">
-      <table class="user-table">
-        <thead>
-          <tr>
-            <th>ลำดับ</th>
-            <th>ชื่อผู้ใช้</th>
-            <th>อีเมล</th>
-            <th>เบอร์โทรศัพท์</th>
-            <th>สถานะ</th>
-            <th>การจัดการ</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of users; let i = index">
-            <td>{{ i + 1 }}</td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.phone }}</td>
-            <td>{{ user.status }}</td>
-            <td>
-              <button class="btn-edit" (click)="editUser(user)">แก้ไข</button>
-              <button class="btn-delete" (click)="deleteUser(user)">ลบ</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <h2>จัดการผู้ใช้</h2>
   
-    <button class="btn-add" (click)="showAddUserForm = true">เพิ่มผู้ใช้ใหม่</button>
-  
-    <!-- ฟอร์มสำหรับเพิ่มหรือแก้ไขผู้ใช้ -->
-    <div class="add-user-form" *ngIf="showAddUserForm">
-      <h3>{{ isEditMode ? 'แก้ไขผู้ใช้' : 'เพิ่มผู้ใช้ใหม่' }}</h3>
-      <form (ngSubmit)="saveUser()">
-        <div>
-          <label for="name">ชื่อผู้ใช้:</label>
-          <input type="text" id="name" [(ngModel)]="currentUser.name" name="name" required>
-        </div>
-        <div>
-          <label for="email">อีเมล:</label>
-          <input type="email" id="email" [(ngModel)]="currentUser.email" name="email" required>
-        </div>
-        <div>
-          <label for="phone">เบอร์โทรศัพท์:</label>
-          <input type="text" id="phone" [(ngModel)]="currentUser.phone" name="phone" required>
-        </div>
-        <div>
-          <label for="status">สถานะ:</label>
-          <select id="status" [(ngModel)]="currentUser.status" name="status">
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-save">บันทึก</button>
-        <button type="button" class="btn-cancel" (click)="cancel()">ยกเลิก</button>
-      </form>
-    </div>
-  </section>
-  
+  <div class="user-table-container">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>ลำดับ</th>
+          <th>ชื่อผู้ใช้</th>
+          <th>อีเมล</th>
+          <th>เบอร์โทรศัพท์</th>
+          <th>สถานะ</th>
+          <th>การจัดการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.status }}</td>
+          <td>
+            <button class="btn-edit" (click)="editUser(user)">แก้ไข</button>
+            <button class="btn-delete" (click)="deleteUser(user)">ลบ</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="btn-add" (click)="showAddUserForm = true">เพิ่มผู้ใช้ใหม่</button>
+
+  <!-- ฟอร์มสำหรับเพิ่มหรือแก้ไขผู้ใช้ -->
+  <div class="add-user-form" *ngIf="showAddUserForm">
+    <h3>{{ isEditMode ? 'แก้ไขผู้ใช้' : 'เพิ่มผู้ใช้ใหม่' }}</h3>
+    <form (ngSubmit)="saveUser()">
+      <div>
+        <label for="name">ชื่อผู้ใช้:</label>
+        <input type="text" id="name" [(ngModel)]="currentUser.name" name="name" required>
+      </div>
+      <div>
+        <label for="email">อีเมล:</label>
+        <input type="email" id="email" [(ngModel)]="currentUser.email" name="email" required>
+      </div>
+      <div>
+        <label for="phone">เบอร์โทรศัพท์:</label>
+        <input type="text" id="phone" [(ngModel)]="currentUser.phone" name="phone" required>
+      </div>
+      <div>
+        <label for="status">สถานะ:</label>
+        <select id="status" [(ngModel)]="currentUser.status" name="status">
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-save">บันทึก</button>
+      <button type="button" class="btn-cancel" (click)="cancel()">ยกเลิก</button>
+    </form>
+  </div>
+</section>

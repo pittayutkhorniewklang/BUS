@@ -13,9 +13,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right, #00aaff, #005f99); /* เปลี่ยนเป็นสีฟ้า gradient */
+  background-image: url('https://www.dpa.or.th/storage/uploads/category/ii_sii_4fb59294a3fc72bd26e27a8078576910_i_he_i_65cf4d9b7f44a.jpg'); /* ใช้ URL ของรูปภาพ */
+  background-size: cover; /* ปรับขนาดให้ครอบคลุมทั้งหน้าจอ */
+  background-position: center; /* จัดให้รูปอยู่ตรงกลาง */
+  background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
 }
 
+/* ฟอร์ม */
 .form-container {
   background-color: white;
   padding: 40px;
