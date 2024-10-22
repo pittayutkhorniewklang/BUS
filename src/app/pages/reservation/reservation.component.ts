@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from './shared.service'; // นำเข้า SharedService
 
 @Component({
   selector: 'app-reservation',
@@ -6,8 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent {
+  bookingData = {
+    from: '',
+    to: '',
+    time: '',
+    date: '',
+    selectedSeats: []
+  };
+
   seats = Array(20).fill({}).map((_, index) => ({ number: index + 1, selected: false }));
-  selectedSeats: number[] = []; // เก็บหมายเลขที่นั่งที่ถูกเลือก
+  selectedSeats: number[] = [];
+
+  constructor(private sharedService: SharedService) {}
 
   toggleSeat(index: number) {
     this.seats[index].selected = !this.seats[index].selected;
@@ -20,12 +31,15 @@ export class ReservationComponent {
   }
 
   removeSeat(seatNumber: number) {
-    // ยกเลิกการเลือกที่นั่งและอัปเดตสถานะ
     this.seats[seatNumber - 1].selected = false;
     this.selectedSeats = this.selectedSeats.filter(seat => seat !== seatNumber);
   }
 
   confirmSelection() {
-    alert('ที่นั่งที่คุณเลือก: ' + this.selectedSeats.join(', '));
+    this.bookingData.selectedSeats = this.selectedSeats;
+
+    // ส่งข้อมูลไปยัง shared service
+    this.sharedService.setReservationData(this.bookingData);
+    alert('การจองของคุณถูกบันทึกแล้ว!');
   }
 }
