@@ -13,6 +13,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
 import { SharedService } from './pages/service/shared.service';
 import { RouterModule } from '@angular/router'; // เพิ่ม RouterModule เพื่อแก้ไขข้อผิดพลาด
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { RouterModule } from '@angular/router'; // เพิ่ม RouterModule 
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot([]), // เพิ่ม RouterModule
+    HttpClientModule,
   ],
   providers: [
     SharedService, 
