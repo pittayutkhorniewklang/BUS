@@ -150,3 +150,44 @@ body {
   opacity: 0.9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.user-management {
+  padding: 20px;
+}
+
+.user-table-container, .user-form-container, .reservation-table-container {
+  margin-bottom: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.user-form-container {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

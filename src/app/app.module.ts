@@ -11,11 +11,8 @@ import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component'
 import { UserComponent } from './pages/admin/user/user.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
-
-
-
-
-
+import { SharedService } from './pages/service/shared.service';
+import { RouterModule } from '@angular/router'; // เพิ่ม RouterModule เพื่อแก้ไขข้อผิดพลาด
 
 @NgModule({
   declarations: [
@@ -27,21 +24,16 @@ import { ReservationComponent } from './pages/reservation/reservation.component'
     TravelcycleComponent,
     UserComponent,
     ContactUsComponent,
-    ReservationComponent,
- 
-  
-
-   
-    
-  
-   
+    ReservationComponent,    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([]), // เพิ่ม RouterModule
   ],
   providers: [
+    SharedService, 
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

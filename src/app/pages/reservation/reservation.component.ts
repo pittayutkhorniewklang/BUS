@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SharedService } from './shared.service'; // นำเข้า SharedService
+import { SharedService } from '../service/shared.service';
 
 @Component({
   selector: 'app-reservation',
@@ -7,16 +7,20 @@ import { SharedService } from './shared.service'; // นำเข้า SharedSe
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent {
+deleteReservation(_t17: any) {
+throw new Error('Method not implemented.');
+}
   bookingData = {
     from: '',
     to: '',
     time: '',
     date: '',
-    selectedSeats: []
+    selectedSeats: [] as number[],
   };
 
   seats = Array(20).fill({}).map((_, index) => ({ number: index + 1, selected: false }));
   selectedSeats: number[] = [];
+reservationData: any;
 
   constructor(private sharedService: SharedService) {}
 
