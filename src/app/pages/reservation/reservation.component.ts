@@ -7,20 +7,17 @@ import { SharedService } from '../service/shared.service';
   styleUrls: ['./reservation.component.css']
 })
 export class ReservationComponent {
-deleteReservation(_t17: any) {
-throw new Error('Method not implemented.');
-}
   bookingData = {
+    name: '', // เพิ่มบรรทัดนี้
     from: '',
     to: '',
     time: '',
     date: '',
-    selectedSeats: [] as number[],
+    selectedSeats: [] as number[]
   };
 
   seats = Array(20).fill({}).map((_, index) => ({ number: index + 1, selected: false }));
   selectedSeats: number[] = [];
-reservationData: any;
 
   constructor(private sharedService: SharedService) {}
 

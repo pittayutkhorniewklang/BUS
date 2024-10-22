@@ -36,7 +36,6 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
 }
@@ -48,44 +47,6 @@ body {
 
 .hero-content p {
     font-size: 1.3rem;
-}
-
-/* Search Form */
-.search-form .form-row {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.search-form .form-group {
-    flex-grow: 1;
-}
-
-.search-form .form-control {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 200px;
-    transition: border-color 0.3s ease;
-}
-
-.search-form .form-control:focus {
-    border-color: #007bff;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-.search-form .btn-primary {
-    padding: 12px 20px;
-    font-size: 1.1rem;
-    background-color: #ff8c00;
-    border: none;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-
-.search-form .btn-primary:hover {
-    background-color: #e67e00;
 }
 
 /* Reservation Form Section */
@@ -100,9 +61,8 @@ body {
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: #333;
-    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    text-align: center;
 }
-
 
 .form-container {
     max-width: 800px;
@@ -111,6 +71,10 @@ body {
     background-color: #f8f9fa;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
 }
 
 .form-group label {
@@ -199,35 +163,25 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-.seat-number {
-    font-size: 1.2rem;
-    background-color: #28a745;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 10px;
-}
-
 /* ปุ่มยืนยันการเลือกที่นั่ง */
 .confirm-button {
     border: 2px solid #007bff;
     color: #007bff;
-    padding: 10px 40px; /* ขยาย padding เพื่อทำให้ปุ่มกว้างขึ้น */
-    border-radius: 50px; /* ทำให้ปุ่มมีขอบมนเป็นวงรี */
+    padding: 12px 40px;
+    border-radius: 50px;
     font-size: 1.1rem;
     transition: all 0.3s ease;
     display: block;
-    margin: 20px auto; /* จัดปุ่มให้อยู่ตรงกลาง */
+    margin: 20px auto;
     text-align: center;
-    background-color: white; /* พื้นหลังสีขาว */
+    background-color: white;
 }
 
 .confirm-button:hover {
-    background-color: #0056b3; /* สีพื้นหลังเมื่อโฮเวอร์ */
-    color: white; /* เปลี่ยนสีตัวอักษรเมื่อโฮเวอร์ */
-    transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อโฮเวอร์ */
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
 }
-
-
 
 /* ปุ่มยกเลิกที่นั่ง */
 .btn-outline-danger {
@@ -240,11 +194,10 @@ body {
 }
 
 .btn-outline-danger:hover {
-    background-color: #dc3545; /* สีพื้นหลังเมื่อโฮเวอร์ */
-    color: white; /* สีฟอนต์เปลี่ยนเป็นขาวเมื่อโฮเวอร์ */
-    transform: scale(1.05); /* ขยายเล็กน้อยเมื่อโฮเวอร์ */
+    background-color: #dc3545;
+    color: white;
+    transform: scale(1.05);
 }
-
 
 /* Footer */
 .footer {
