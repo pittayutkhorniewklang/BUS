@@ -14,6 +14,7 @@ import { ReservationComponent } from './pages/reservation/reservation.component'
 import { SharedService } from './pages/service/shared.service';
 import { RouterModule } from '@angular/router'; // เพิ่ม RouterModule เพื่อแก้ไขข้อผิดพลาด
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     TravelcycleComponent,
     UserComponent,
     ContactUsComponent,
-    ReservationComponent,    
+    ReservationComponent,
+    ProfileComponent,    
   ],
   imports: [
     BrowserModule,
