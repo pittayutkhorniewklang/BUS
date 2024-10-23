@@ -28,4 +28,8 @@ export class TripService {
   getTripsFromApi(): Observable<any> {
     return this.http.get(`${this.TRIP_URL}`); // ใช้ URL ใหม่
   }
+
+  bookSeat(bookingData: any): Observable<any> {
+  return this.http.post(`${this.TRIP_URL}/book`, bookingData); // ใช้ URL สำหรับการจอง
+}
 }

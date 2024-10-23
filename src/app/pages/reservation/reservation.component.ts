@@ -14,6 +14,7 @@ export class ReservationComponent implements OnInit {
     to: '',
     time: '',
     date: '',
+    user_id: 0,
     selectedSeats: [] as number[]
   };
 
@@ -69,6 +70,13 @@ export class ReservationComponent implements OnInit {
 
   confirmSelection() {
     this.bookingData.selectedSeats = this.selectedSeats;
-    alert('การจองของคุณถูกบันทึกแล้ว!');
+    this.bookingData.user_id = 1; // หรือเก็บข้อมูล ID ของผู้ใช้ที่ล็อกอินอยู่
+  
+    // ส่งข้อมูลการจองไปยัง backend
+    this.tripService.bookSeat(this.bookingData).subscribe(response => {
+      alert('การจองของคุณถูกบันทึกแล้ว!');
+    }, error => {
+      alert('เกิดข้อผิดพลาดในการจอง!');
+    });
   }
 }
