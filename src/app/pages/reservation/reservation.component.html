@@ -15,26 +15,22 @@
           </div>
 
           <div class="form-group mb-3">
-              <label for="from">ต้นทาง</label>
-              <select class="form-control" id="from" [(ngModel)]="bookingData.from" name="from" required>
-                  <option value="" disabled selected>เลือกต้นทาง</option>
-                  <option value="bangkok">กรุงเทพ</option>
-                  <option value="chiangmai">เชียงใหม่</option>
-                  <option value="phuket">บางเเสน</option>
-                  <option value="chonburi">ชลบุรี</option>
-              </select>
+            <label for="from">ต้นทาง</label>
+            <select class="form-control" id="from" [(ngModel)]="bookingData.from" name="from" required>
+              <option value="" disabled selected>เลือกต้นทาง</option>
+              <option *ngFor="let option of fromOptions" [value]="option">{{ option }}</option>
+            </select>
           </div>
-
+          
           <div class="form-group mb-3">
-              <label for="to">ปลายทาง</label>
-              <select class="form-control" id="to" [(ngModel)]="bookingData.to" name="to" required>
-                  <option value="" disabled selected>เลือกปลายทาง</option>
-                  <option value="bangkok">กรุงเทพ</option>
-                  <option value="chiangmai">เชียงใหม่</option>
-                  <option value="phuket">บางเเสน</option>
-                  <option value="chonburi">ชลบุรี</option>
-              </select>
+            <label for="to">ปลายทาง</label>
+            <select class="form-control" id="to" [(ngModel)]="bookingData.to" name="to" required>
+              <option value="" disabled selected>เลือกปลายทาง</option>
+              <option *ngFor="let option of toOptions" [value]="option">{{ option }}</option>
+            </select>
           </div>
+          
+          
 
           <div class="form-group mb-3">
               <label for="time">เที่ยวรถ</label>
