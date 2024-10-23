@@ -33,12 +33,12 @@
           
 
           <div class="form-group mb-3">
-            <label for="trip">เลือกเที่ยวรถ</label>
+            <label for="time">เที่ยวรถ</label>
             <select class="form-control" id="trip" [(ngModel)]="bookingData.time" name="time" required>
-                <option value="" disabled selected>เลือกเที่ยวรถ</option>
-                <option *ngFor="let trip of trips" [value]="trip.id">{{ trip.departure_time }} - {{ trip.available_seats }} ที่นั่งว่าง</option>
+              <option value="" disabled selected>เลือกเที่ยวรถ</option>
+              <option *ngFor="let trip of trips" [value]="trip.id">{{ trip.displayTime }}</option>
             </select>
-        </div>
+          </div>
 
           <div class="form-group mb-3">
               <label for="date">วันที่เดินทาง</label>

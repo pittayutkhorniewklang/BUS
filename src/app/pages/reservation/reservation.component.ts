@@ -1,3 +1,4 @@
+// reservation.component.ts
 import { Component, OnInit } from '@angular/core';
 import { TripService } from '../service/trip.service';
 
@@ -19,11 +20,11 @@ export class ReservationComponent implements OnInit {
   fromOptions: string[] = [];
   toOptions: string[] = [];
   routes: any[] = [];
-  trips: any[] = [];  // เพิ่มตัวแปร trips เพื่อใช้เก็บข้อมูลเที่ยวรถ
+  trips: any[] = []; // เพิ่มตัวแปร trips เพื่อใช้เก็บข้อมูลเที่ยวรถ
   seats = Array(20).fill({}).map((_, index) => ({ number: index + 1, selected: false }));
   selectedSeats: number[] = [];
 
-  constructor(private tripService: TripService) { }
+  constructor(private tripService: TripService) {}
 
   ngOnInit() {
     // ดึงข้อมูลเส้นทางจาก backend
@@ -39,7 +40,15 @@ export class ReservationComponent implements OnInit {
 
     // ดึงข้อมูลเที่ยวรถจาก API ใหม่
     this.tripService.getTripsFromApi().subscribe(data => {
-      this.trips = data;  // เก็บข้อมูลเที่ยวรถในตัวแปร trips
+      this.trips = data.map((trip: any) => ({
+        id: trip.id,
+        // แสดงเฉพาะเวลา
+        displayTime: new Date(trip.departure_time).toLocaleTimeString('th-TH', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        })
+      }));
     });
   }
 
