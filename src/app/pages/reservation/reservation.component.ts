@@ -18,8 +18,8 @@ export class ReservationComponent implements OnInit {
 
   fromOptions: string[] = [];
   toOptions: string[] = [];
-
-  routes: any[] = []; // ตัวแปรเก็บข้อมูลเส้นทางที่ดึงมาจาก backend
+  routes: any[] = [];
+  trips: any[] = [];  // เพิ่มตัวแปร trips เพื่อใช้เก็บข้อมูลเที่ยวรถ
   seats = Array(20).fill({}).map((_, index) => ({ number: index + 1, selected: false }));
   selectedSeats: number[] = [];
 
@@ -30,12 +30,16 @@ export class ReservationComponent implements OnInit {
     this.tripService.getRoutes().subscribe(data => {
       this.routes = data;
 
-      // กรองข้อมูลซ้ำออกเพื่อสร้างตัวเลือกสำหรับต้นทางและปลายทาง
       const uniqueFrom = [...new Set(this.routes.map(route => route.start))];
       const uniqueTo = [...new Set(this.routes.map(route => route.end_point))];
 
       this.fromOptions = uniqueFrom;
       this.toOptions = uniqueTo;
+    });
+
+    // ดึงข้อมูลเที่ยวรถจาก API ใหม่
+    this.tripService.getTripsFromApi().subscribe(data => {
+      this.trips = data;  // เก็บข้อมูลเที่ยวรถในตัวแปร trips
     });
   }
 
@@ -56,8 +60,6 @@ export class ReservationComponent implements OnInit {
 
   confirmSelection() {
     this.bookingData.selectedSeats = this.selectedSeats;
-
-    // ส่งข้อมูลไปยัง shared service หรือ backend ตามต้องการ
     alert('การจองของคุณถูกบันทึกแล้ว!');
   }
 }

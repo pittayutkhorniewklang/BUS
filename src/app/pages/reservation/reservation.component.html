@@ -33,14 +33,12 @@
           
 
           <div class="form-group mb-3">
-              <label for="time">เที่ยวรถ</label>
-              <select class="form-control" id="time" [(ngModel)]="bookingData.time" name="time" required>
-                  <option value="" disabled selected>เลือกเที่ยวรถ</option>
-                  <option value="morning">รอบเช้า (6:00 - 9:00)</option>
-                  <option value="afternoon">รอบบ่าย (12:00 - 15:00)</option>
-                  <option value="evening">รอบเย็น (18:00 - 21:00)</option>
-              </select>
-          </div>
+            <label for="trip">เลือกเที่ยวรถ</label>
+            <select class="form-control" id="trip" [(ngModel)]="bookingData.time" name="time" required>
+                <option value="" disabled selected>เลือกเที่ยวรถ</option>
+                <option *ngFor="let trip of trips" [value]="trip.id">{{ trip.departure_time }} - {{ trip.available_seats }} ที่นั่งว่าง</option>
+            </select>
+        </div>
 
           <div class="form-group mb-3">
               <label for="date">วันที่เดินทาง</label>
