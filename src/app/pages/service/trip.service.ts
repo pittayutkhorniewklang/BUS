@@ -9,6 +9,8 @@ export class TripService {
   
   private API_URL = 'http://localhost:3000/route'; // backend API URL
   private TRIP_URL = 'http://localhost:3000/trip'; // URL ใหม่สำหรับ trips
+  private BOOK_URL = 'http://localhost:3000/booking';
+
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +32,8 @@ export class TripService {
   }
 
   bookSeat(bookingData: any): Observable<any> {
-  return this.http.post(`${this.TRIP_URL}/book`, bookingData); // ใช้ URL สำหรับการจอง
+    return this.http.post(`${this.BOOK_URL}/book`, bookingData); // ใช้ URL สำหรับการจอง
+  }
+  
 }
-}
+
