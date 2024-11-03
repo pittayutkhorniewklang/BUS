@@ -48,25 +48,25 @@
     <table>
       <thead>
         <tr>
-          <th>ID</th>
+
           <th>Start</th>
           <th>End Point</th>
           <th>Ticket Price</th>
           <th>Departure Time</th>
           <th>Arrival Time</th>
-          <th>Available Seats</th>
+          
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let route of routes">
-          <td>{{ route.id }}</td>
+  
           <td>{{ route.start }}</td>
           <td>{{ route.end_point }}</td>
           <td>{{ route.ticket_price }}</td>
           <td>{{ route.departure_time | date: 'shortTime' }}</td>
           <td>{{ route.arrival_time | date: 'shortTime' }}</td>
-          <td>{{ route.available_seat }}</td>
+         
           <td><button (click)="deleteRoute(route.id)">Delete</button></td>
         </tr>
       </tbody>

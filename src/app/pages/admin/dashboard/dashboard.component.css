@@ -57,17 +57,18 @@ header {
 
 .stats {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around; /* เปลี่ยนจาก space-between เป็น space-around */
     margin-bottom: 20px;
 }
 
 .card {
     background-color: white;
-    padding: 20px;
-    border-radius: 8px;
+    padding: 30px; /* เพิ่มขนาด padding เพื่อความใหญ่ขึ้น */
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 22%;
+    width: 30%; /* ขยายความกว้างจากเดิม */
     text-align: center;
+    font-size: 18px; /* เพิ่มขนาดตัวอักษร */
 }
 
 .charts {
