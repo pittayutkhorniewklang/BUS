@@ -26,6 +26,14 @@ export class TripService {
     return this.http.get(`${this.API_URL}/trips`);
   }
 
+  addRoute(route: any): Observable<any> {
+    return this.http.post(`${this.API_URL}`, route);
+  }
+  
+  deleteRoute(id: number): Observable<any> {
+    return this.http.delete(`${this.API_URL}/${id}`);
+  }
+
   // เมธอดใหม่สำหรับดึงข้อมูลเที่ยวรถ
   getTripsFromApi(): Observable<any> {
     return this.http.get(`${this.TRIP_URL}`); // ใช้ URL ใหม่

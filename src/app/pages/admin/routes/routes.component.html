@@ -1,0 +1,75 @@
+<aside class="sidebar">
+    <h2>Dashboard</h2>
+    <nav>
+      <ul>
+        <li><a routerLink="/admin">Dashboard</a></li>
+        <li><a routerLink="/admin/routes">Manage Routes</a></li>
+        <li><a routerLink="/admin/user">Manage Users</a></li>
+      </ul>
+    </nav>
+  </aside>
+  
+  <div class="manage-routes">
+    <h2>Manage Routes</h2>
+    <div class="form">
+      <div class="form-group">
+        <label for="start">Start Location:</label>
+        <input id="start" [(ngModel)]="newRoute.start" placeholder="Start Location" />
+      </div>
+  
+      <div class="form-group">
+        <label for="end_point">End Location:</label>
+        <input id="end_point" [(ngModel)]="newRoute.end_point" placeholder="End Location" />
+      </div>
+  
+      <div class="form-group">
+        <label for="ticket_price">Ticket Price:</label>
+        <input id="ticket_price" [(ngModel)]="newRoute.ticket_price" placeholder="Ticket Price" type="number" />
+      </div>
+  
+      <div class="form-group">
+        <label for="departure_time">Departure Time:</label>
+        <input id="departure_time" [(ngModel)]="newRoute.departure_time" placeholder="Departure Time" type="datetime-local" />
+      </div>
+  
+      <div class="form-group">
+        <label for="arrival_time">Arrival Time:</label>
+        <input id="arrival_time" [(ngModel)]="newRoute.arrival_time" placeholder="Arrival Time" type="datetime-local" />
+      </div>
+  
+      <div class="form-group">
+        <label for="available_seat">Available Seats:</label>
+        <input id="available_seat" [(ngModel)]="newRoute.available_seat" placeholder="Available Seats" type="number" />
+      </div>
+  
+      <button (click)="addRoute()">Add Route</button>
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Start</th>
+          <th>End Point</th>
+          <th>Ticket Price</th>
+          <th>Departure Time</th>
+          <th>Arrival Time</th>
+          <th>Available Seats</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let route of routes">
+          <td>{{ route.id }}</td>
+          <td>{{ route.start }}</td>
+          <td>{{ route.end_point }}</td>
+          <td>{{ route.ticket_price }}</td>
+          <td>{{ route.departure_time | date: 'shortTime' }}</td>
+          <td>{{ route.arrival_time | date: 'shortTime' }}</td>
+          <td>{{ route.available_seat }}</td>
+          <td><button (click)="deleteRoute(route.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -15,6 +15,8 @@ import { SharedService } from './pages/service/shared.service';
 import { RouterModule } from '@angular/router'; // เพิ่ม RouterModule เพื่อแก้ไขข้อผิดพลาด
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { RoutesComponent } from './pages/admin/routes/routes.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     UserComponent,
     ContactUsComponent,
     ReservationComponent,
-    ProfileComponent,    
+    ProfileComponent,
+    DashboardComponent,
+    RoutesComponent,    
   ],
   imports: [
     BrowserModule,
