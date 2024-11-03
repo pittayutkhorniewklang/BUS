@@ -14,7 +14,7 @@ export class RoutesComponent implements OnInit {
   ticket_price: 0,
   departure_time: '',
   arrival_time: '',
-  available_seat: 0
+  available_seats: 0
   };
 
   constructor(private routeService: TripService) { }
@@ -26,6 +26,7 @@ export class RoutesComponent implements OnInit {
   loadRoutes(): void {
     this.routeService.getRoutes().subscribe(data => {
       this.routes = data;
+      console.log(this.routes);
     });
   }
 
@@ -38,12 +39,13 @@ export class RoutesComponent implements OnInit {
         ticket_price: 0,
         departure_time: '',
         arrival_time: '',
-        available_seat: 0
+        available_seats: 0
       };
     });
   }
 
   deleteRoute(id: number): void {
+    console.log('Deleting ID:', id);
     this.routeService.deleteRoute(id).subscribe(() => {
       this.loadRoutes();
     });
