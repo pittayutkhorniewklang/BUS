@@ -10,7 +10,7 @@ export class TripService {
   private API_URL = 'http://localhost:3000/route'; // backend API URL
   private TRIP_URL = 'http://localhost:3000/trip'; // URL ใหม่สำหรับ trips
   private BOOK_URL = 'http://localhost:3000/booking';
-
+  
 
   constructor(private http: HttpClient) { }
 
