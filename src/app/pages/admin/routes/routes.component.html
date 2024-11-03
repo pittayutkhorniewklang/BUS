@@ -60,15 +60,14 @@
       </thead>
       <tbody>
         <tr *ngFor="let route of routes">
-  
-          <td>{{ route.start }}</td>
-          <td>{{ route.end_point }}</td>
-          <td>{{ route.ticket_price }}</td>
-          <td>{{ route.departure_time | date: 'shortTime' }}</td>
-          <td>{{ route.arrival_time | date: 'shortTime' }}</td>
-         
-          <td><button (click)="deleteRoute(route.id)">Delete</button></td>
-        </tr>
+            <td>{{ route.start }}</td>
+            <td>{{ route.end_point }}</td>
+            <td>{{ route.ticket_price }}</td>
+            <td>{{ route.departure_time | date: 'shortTime' }}</td>
+            <td>{{ route.arrival_time | date: 'shortTime' }}</td>
+            <td><button (click)="deleteTrip(route.trip_id)">Delete</button>
+            </td>
+          </tr>
       </tbody>
     </table>
   </div>

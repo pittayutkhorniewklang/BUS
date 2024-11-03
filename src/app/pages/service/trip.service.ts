@@ -30,9 +30,10 @@ export class TripService {
     return this.http.post(`${this.API_URL}`, route);
   }
   
-  deleteRoute(id: number): Observable<any> {
-    return this.http.delete(`${this.API_URL}/${id}`);
+  deleteTrip(id: number): Observable<any> {
+    return this.http.delete(`${this.TRIP_URL}/${id}`);
   }
+  
 
   // เมธอดใหม่สำหรับดึงข้อมูลเที่ยวรถ
   getTripsFromApi(): Observable<any> {

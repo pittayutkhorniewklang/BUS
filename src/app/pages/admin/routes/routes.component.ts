@@ -25,6 +25,7 @@ export class RoutesComponent implements OnInit {
 
   loadRoutes(): void {
     this.routeService.getRoutes().subscribe(data => {
+      console.log('Routes:', data);
       this.routes = data;
       console.log(this.routes);
     });
@@ -44,10 +45,13 @@ export class RoutesComponent implements OnInit {
     });
   }
 
-  deleteRoute(id: number): void {
-    console.log('Deleting ID:', id);
-    this.routeService.deleteRoute(id).subscribe(() => {
+  deleteTrip(id: number): void {
+    console.log('Deleting Trip ID:', id);
+    this.routeService.deleteTrip(id).subscribe(() => {
       this.loadRoutes();
     });
   }
+  
+  
+  
 }
