@@ -15,7 +15,8 @@ export class ReservationComponent implements OnInit {
     time: '',
     date: '',
     user_id: 0,
-    selectedSeats: [] as number[]
+    selectedSeats: [] as number[],
+    trip_id:0
   };
 
   fromOptions: string[] = [];
@@ -28,30 +29,41 @@ export class ReservationComponent implements OnInit {
   constructor(private tripService: TripService) {}
 
   ngOnInit() {
-    // ดึงข้อมูลเส้นทางจาก backend
+    // โหลดข้อมูลเส้นทางจาก API และตั้งค่า "ต้นทาง" และ "ปลายทาง"
     this.tripService.getRoutes().subscribe(data => {
-      this.routes = data;
+        this.routes = data;
 
-      const uniqueFrom = [...new Set(this.routes.map(route => route.start))];
-      const uniqueTo = [...new Set(this.routes.map(route => route.end_point))];
+        // กำหนดค่า "ต้นทาง" และ "ปลายทาง" ที่ไม่ซ้ำกัน
+        const uniqueFrom = [...new Set(this.routes.map(route => route.start))];
+        const uniqueTo = [...new Set(this.routes.map(route => route.end_point))];
 
-      this.fromOptions = uniqueFrom;
-      this.toOptions = uniqueTo;
+        this.fromOptions = uniqueFrom;
+        this.toOptions = uniqueTo;
+
+        // Log เพื่อการตรวจสอบข้อมูล
+        console.log('Routes data:', this.routes); // ตรวจสอบข้อมูล routes
+        console.log('From options:', this.fromOptions); // ตรวจสอบข้อมูล fromOptions
+        console.log('To options:', this.toOptions); // ตรวจสอบข้อมูล toOptions
     });
 
-    // ดึงข้อมูลเที่ยวรถจาก API ใหม่
+    // โหลดข้อมูลเที่ยวรถจาก API
     this.tripService.getTripsFromApi().subscribe(data => {
-      this.trips = data.map((trip: any) => ({
-        id: trip.id,
-        // แสดงเฉพาะเวลา
-        displayTime: new Date(trip.departure_time).toLocaleTimeString('th-TH', {
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false
-        })
-      }));
+        this.trips = data.map((trip: any) => ({
+            id: trip.id,
+            displayTime: new Date(trip.departure_time).toLocaleTimeString('th-TH', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            })
+        }));
+
+        // Log เพื่อการตรวจสอบข้อมูล
+        console.log('Trips data:', this.trips); // ตรวจสอบข้อมูล trips
     });
-  }
+}
+
+
+
 
   toggleSeat(index: number) {
     this.seats[index].selected = !this.seats[index].selected;
@@ -67,16 +79,34 @@ export class ReservationComponent implements OnInit {
     this.seats[seatNumber - 1].selected = false;
     this.selectedSeats = this.selectedSeats.filter(seat => seat !== seatNumber);
   }
-
   confirmSelection() {
+    console.log('Selected time:', this.bookingData.time);
+    console.log('Available trips:', this.trips);
+
+    if (!this.bookingData.time) {
+        alert('กรุณาเลือกเวลาเดินทาง');
+        return;
+    }
+
+    // เปรียบเทียบ time กับ id ของ trip (ควรจะเป็น id ที่ส่งมาจาก dropdown)
+    const selectedTrip = this.trips.find(trip => trip.id == this.bookingData.time);
+    
+    if (!selectedTrip) {
+        alert('ไม่พบเที่ยวเดินทางที่เลือก');
+        return;
+    }
+
     this.bookingData.selectedSeats = this.selectedSeats;
-    this.bookingData.user_id = 1; // หรือเก็บข้อมูล ID ของผู้ใช้ที่ล็อกอินอยู่
-  
-    // ส่งข้อมูลการจองไปยัง backend
+    this.bookingData.user_id = 1; // หรือใส่ user_id จริงที่ได้จากระบบ
+    this.bookingData.trip_id = selectedTrip.id;
+
     this.tripService.bookSeat(this.bookingData).subscribe(response => {
-      alert('การจองของคุณถูกบันทึกแล้ว!');
+        alert('การจองของคุณถูกบันทึกแล้ว!');
     }, error => {
-      alert('เกิดข้อผิดพลาดในการจอง!');
+        console.error("Booking error:", error); // แสดงข้อผิดพลาดใน Console
+        alert('เกิดข้อผิดพลาดในการจอง!');
     });
-  }
+}
+
+
 }
