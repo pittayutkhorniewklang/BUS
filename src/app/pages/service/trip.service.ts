@@ -59,6 +59,7 @@ export class TripService {
 
   deleteReservation(id: number): Observable<any> {
     return this.http.delete<any>(`${this.API_URL}/reservations/${id}`);
-  }
+}
+
 }
 

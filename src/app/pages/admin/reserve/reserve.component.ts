@@ -29,16 +29,13 @@ export class ReserveComponent {
 
   deleteReservation(id: number) {
     if (confirm('Are you sure you want to delete this reservation?')) {
-      this.tripService.deleteReservation(id).subscribe(() => {
-        this.loadReservations(); // Reload reservations after deletion
-      });
+        this.tripService.deleteReservation(id).subscribe(() => {
+            this.loadReservations(); // Reload reservations after deletion
+        }, error => {
+            console.error("Error deleting reservation:", error); // แสดงข้อผิดพลาดใน Console
+        });
     }
-  }
-
-  openEdit(reservation: any) {
-    this.selectedReservation = { ...reservation }; // Copy reservation data for editing
-    this.isEditMode = true;
-  }
+}
 
   submitForm() {
     this.tripService.updateReservation(this.selectedReservation.id, this.selectedReservation).subscribe(() => {

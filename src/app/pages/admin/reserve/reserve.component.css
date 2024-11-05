@@ -36,7 +36,6 @@
     background-color: #495057;
 }
 
-/* reservation.component.css */
 .main-content {
     margin-left: 250px; /* ให้เนื้อหาหลักอยู่ห่างจาก sidebar */
     padding: 20px; /* เพิ่มการ padding สำหรับเนื้อหา */
@@ -46,6 +45,10 @@ h3 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
+}
+
+.table-container {
+    margin-top: 20px;
 }
 
 table {
@@ -70,7 +73,7 @@ tr:hover {
 }
 
 button {
-    background-color: #007bff; /* ปรับเปลี่ยนสีปุ่ม */
+    background-color: #dc3545; /* ปรับเปลี่ยนสีปุ่ม */
     color: white;
     border: none;
     padding: 8px 12px;
@@ -79,7 +82,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* สีปุ่มเมื่อวางเมาส์ */
+    background-color: #c82333; /* สีปุ่มเมื่อวางเมาส์ */
 }
 
 form {

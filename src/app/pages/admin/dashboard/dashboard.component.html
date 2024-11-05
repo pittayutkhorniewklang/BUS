@@ -1,29 +1,47 @@
-<div class="dashboard">
-    <aside class="sidebar">
-        <h2>Dashboard</h2>
-        <nav>
-            <ul>
-                <li><a routerLink="/admin">Dashboard</a></li>
-                <li><a routerLink="/admin/routes">Manage Routes</a></li>
-                <li><a routerLink="/admin/user">Manage Users</a></li>
-                <li><a routerLink="/admin/reserve">Manage booking</a></li>
-            </ul>
-        </nav>
-    </aside>
-    <main class="main-content">
-        <header>
-            <h1>Welcome to Bus Booking Management</h1>
-        </header>
-        <section class="stats">
-            <div class="card" *ngFor="let stat of stats">
-                <h3>{{ stat.title }}</h3>
-                <p>{{ stat.value }}</p>
-            </div>
-        </section>
-        <section class="charts">
-            <h2>Bookings Over Time</h2>
-            <!-- Include chart or table here -->
-            <div class="chart-placeholder">Chart Placeholder</div>
-        </section>
-    </main>
+<aside class="sidebar">
+    <h2>ADMIN DASHBOARD</h2>
+    <nav>
+        <ul>
+            <li><a routerLink="/admin">Dashboard</a></li>
+            <li><a routerLink="/admin/routes">Manage Routes</a></li>
+            <li><a routerLink="/admin/user">Manage Users</a></li>
+            <li><a routerLink="/admin/reserve">Manage Bookings</a></li>
+        </ul>
+    </nav>
+</aside>
+<div class="main-content">
+    <h3>Dashboard Overview</h3>
+    <div class="dashboard-cards">
+        <div class="card">
+            <h4>Total Users</h4>
+            <p>{{ userCount }}</p>
+        </div>
+        <div class="card">
+            <h4>Total Reservations</h4>
+            <p>{{ reservationCount }}</p>
+        </div>
+    </div>
+    <section class="recent-reservations">
+        <h4>Recent Reservations</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Seats</th>
+                    <th>Booking Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reservation of recentReservations">
+                    <td>{{ reservation.username }}</td>
+                    <td>{{ reservation.start_location }}</td>
+                    <td>{{ reservation.end_location }}</td>
+                    <td>{{ reservation.number_of_seats }}</td>
+                    <td>{{ reservation.booking_date | date }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </div>

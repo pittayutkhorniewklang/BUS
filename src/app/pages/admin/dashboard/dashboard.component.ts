@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../service/user.service';
+import { TripService } from '../../service/trip.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,18 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  userCount: number = 0;
+  reservationCount: number = 0;
+  recentReservations: any[] = [];
 
-  stats = [
-    { title: 'Total Bookings', value: 1234 },
-    { title: 'Registered Users', value: 789 },
-    { title: 'Total Revenue', value: '฿1,234,567' } // คงเหลือแค่ Total Revenue
-];
+  constructor(private userService: UserService, private tripService: TripService) {}
 
-
-  constructor() { }
-
-  ngOnInit(): void {
-    // Load additional data here if needed
+  ngOnInit() {
+    this.loadUserCount();
+    this.loadReservationCount();
+    this.loadRecentReservations();
   }
 
+  loadUserCount() {
+    this.userService.getUserCount().subscribe(count => {
+      this.userCount = count;
+    });
+  }
+
+  loadReservationCount() {
+    this.tripService.getReservations().subscribe(reservations => {
+      this.reservationCount = reservations.length; // ใช้ความยาวของรายการการจอง
+    });
+  }
+
+  loadRecentReservations() {
+    // ดึงข้อมูลการจองล่าสุดในที่นี้
+    this.tripService.getReservations().subscribe(reservations => {
+      this.recentReservations = reservations.slice(0, 5); // แสดงการจองล่าสุด 5 รายการ
+    });
+  }
 }
