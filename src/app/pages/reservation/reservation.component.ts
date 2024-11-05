@@ -97,7 +97,11 @@ export class ReservationComponent implements OnInit {
     }
 
     this.bookingData.selectedSeats = this.selectedSeats;
-    this.bookingData.user_id = 1; // หรือใส่ user_id จริงที่ได้จากระบบ
+    
+    // ดึง user_id จาก localStorage แทนค่า 1
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    this.bookingData.user_id = user.id || 1; // ใช้ user.id ถ้ามี ไม่เช่นนั้นใช้ 1 เป็นค่าเริ่มต้น
+
     this.bookingData.trip_id = selectedTrip.id;
 
     this.tripService.bookSeat(this.bookingData).subscribe(response => {
