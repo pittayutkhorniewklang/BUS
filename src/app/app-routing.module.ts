@@ -8,6 +8,8 @@ import { TravelcycleComponent } from './pages/travelcycle/travelcycle.component'
 import { UserComponent } from './pages/admin/user/user.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { RoutesComponent } from './pages/admin/routes/routes.component';
 
 
 
@@ -19,9 +21,9 @@ const routes: Routes = [
  {path :'header',component:HeaderComponent},
  {path : 'travelcycle',component:TravelcycleComponent},
  {path : 'admin/user' , component:UserComponent},
- {path : 'reservation',component:ReservationComponent}
- 
-
+ {path : 'reservation',component:ReservationComponent},
+ {path : 'admin',component:DashboardComponent},
+ {path : 'admin/routes',component:RoutesComponent}
  
 ];
 
