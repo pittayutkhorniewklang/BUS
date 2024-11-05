@@ -48,4 +48,17 @@ export class TripService {
 
     return this.http.post<any>(`${this.API_URL}/booking/book`, bookingData, { headers }); // เพิ่ม headers ในคำขอ
   }
+
+  getReservations(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API_URL}/reservations`);
+  }
+
+  updateReservation(id: number, reservation: any): Observable<any> {
+    return this.http.put<any>(`${this.API_URL}/reservations/${id}`, reservation);
+  }
+
+  deleteReservation(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.API_URL}/reservations/${id}`);
+  }
 }
+

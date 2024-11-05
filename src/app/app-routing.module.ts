@@ -10,6 +10,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { RoutesComponent } from './pages/admin/routes/routes.component';
+import { ReserveComponent } from './pages/admin/reserve/reserve.component';
 
 
 
@@ -23,8 +24,8 @@ const routes: Routes = [
  {path : 'admin/user' , component:UserComponent},
  {path : 'reservation',component:ReservationComponent},
  {path : 'admin',component:DashboardComponent},
- {path : 'admin/routes',component:RoutesComponent}
- 
+ {path : 'admin/routes',component:RoutesComponent},
+ {path : 'admin/reserve',component:ReserveComponent}
 ];
 
 @NgModule({

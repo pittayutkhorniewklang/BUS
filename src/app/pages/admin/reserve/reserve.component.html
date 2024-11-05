@@ -1,1 +1,52 @@
-<p>reserve works!</p>
+<!-- reservation.component.html -->
+<aside class="sidebar">
+    <h2>BOOKING</h2>
+    <nav>
+        <ul>
+            <li><a routerLink="/admin">Dashboard</a></li>
+            <li><a routerLink="/admin/routes">Manage Routes</a></li>
+            <li><a routerLink="/admin/user">Manage Users</a></li>
+            <li><a routerLink="/admin/reserve">Manage booking</a></li>
+        </ul>
+    </nav>
+</aside>
+<div class="main-content">
+    <h3>Manage Reservations</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Seats</th>
+                <th>Booking Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of reservations">
+                <td>{{ reservation.username }}</td>
+                <td>{{ reservation.start_location }}</td>
+                <td>{{ reservation.end_location }}</td>
+                <td>{{ reservation.number_of_seats }}</td>
+                <td>{{ reservation.booking_date | date }}</td>
+                <td>
+                    
+                    <button (click)="deleteReservation(reservation.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<!-- Form for editing a reservation -->
+<div *ngIf="isEditMode">
+  <h4>Edit Reservation</h4>
+  <form (ngSubmit)="submitForm()">
+    <input [(ngModel)]="selectedReservation.user_id" placeholder="User ID" required />
+    <input [(ngModel)]="selectedReservation.trip_id" placeholder="Trip ID" required />
+    <input [(ngModel)]="selectedReservation.number_of_seats" placeholder="Seats" required />
+    <input [(ngModel)]="selectedReservation.booking_date" placeholder="Booking Date" required />
+    <button type="submit">Save</button>
+  </form>
+</div>
+</div>
