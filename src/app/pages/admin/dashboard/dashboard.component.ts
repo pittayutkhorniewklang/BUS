@@ -1,3 +1,4 @@
+// dashboard.component.ts
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { TripService } from '../../service/trip.service';
@@ -9,33 +10,56 @@ import { TripService } from '../../service/trip.service';
 })
 export class DashboardComponent implements OnInit {
   userCount: number = 0;
-  reservationCount: number = 0;
+  bookingCount: number = 0;
+  routeCount: number = 0;
+  tripCount: number = 0;
   recentReservations: any[] = [];
 
   constructor(private userService: UserService, private tripService: TripService) {}
 
   ngOnInit() {
-    this.loadUserCount();
-    this.loadReservationCount();
-    this.loadRecentReservations();
+    this.getUserCount();
+    this.getBookingCount();
+    this.getRouteCount();
+    this.getTripCount();
+    this.getRecentReservations();
   }
 
-  loadUserCount() {
+  getUserCount() {
     this.userService.getUserCount().subscribe(count => {
       this.userCount = count;
     });
   }
 
-  loadReservationCount() {
-    this.tripService.getReservations().subscribe(reservations => {
-      this.reservationCount = reservations.length; // ใช้ความยาวของรายการการจอง
+  getBookingCount() {
+    this.tripService.getBookingCount().subscribe(count => {
+      this.bookingCount = count;
     });
   }
 
-  loadRecentReservations() {
-    // ดึงข้อมูลการจองล่าสุดในที่นี้
-    this.tripService.getReservations().subscribe(reservations => {
-      this.recentReservations = reservations.slice(0, 5); // แสดงการจองล่าสุด 5 รายการ
+  getRouteCount() {
+    this.tripService.getRouteCount().subscribe(count => {
+      this.routeCount = count;
     });
+  }
+
+  getTripCount() {
+    this.tripService.getTripCount().subscribe(count => {
+      this.tripCount = count;
+    });
+  }
+
+  getRecentReservations() {
+    this.tripService.getReservations().subscribe(reservations => {
+      this.recentReservations = reservations.slice(0, 5); // แสดงเฉพาะ 5 รายการล่าสุด
+    });
+  }
+
+  deleteReservation(id: number) {
+    if (confirm('Are you sure you want to delete this reservation?')) {
+      this.tripService.deleteReservation(id).subscribe(() => {
+        this.getRecentReservations(); // โหลดรายการใหม่หลังจากการลบ
+      });
+    }
   }
 }

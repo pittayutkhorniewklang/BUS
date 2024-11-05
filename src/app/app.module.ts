@@ -41,6 +41,7 @@ import { ReserveComponent } from './pages/admin/reserve/reserve.component';
     FormsModule,
     RouterModule.forRoot([]), // เพิ่ม RouterModule
     HttpClientModule,
+    
   ],
   providers: [
     SharedService, 

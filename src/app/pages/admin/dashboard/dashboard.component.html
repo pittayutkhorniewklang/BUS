@@ -1,47 +1,58 @@
+<!-- dashboard.component.html -->
 <aside class="sidebar">
-    <h2>ADMIN DASHBOARD</h2>
+    <h2>DASHBOARD</h2>
     <nav>
         <ul>
             <li><a routerLink="/admin">Dashboard</a></li>
             <li><a routerLink="/admin/routes">Manage Routes</a></li>
             <li><a routerLink="/admin/user">Manage Users</a></li>
-            <li><a routerLink="/admin/reserve">Manage Bookings</a></li>
+            <li><a routerLink="/admin/reserve">Manage Booking</a></li>
         </ul>
     </nav>
 </aside>
 <div class="main-content">
     <h3>Dashboard Overview</h3>
-    <div class="dashboard-cards">
+    
+    <div class="card-container">
         <div class="card">
             <h4>Total Users</h4>
             <p>{{ userCount }}</p>
         </div>
         <div class="card">
-            <h4>Total Reservations</h4>
-            <p>{{ reservationCount }}</p>
+            <h4>Total Bookings</h4>
+            <p>{{ bookingCount }}</p>
+        </div>
+        <div class="card">
+            <h4>Total Routes</h4>
+            <p>{{ routeCount }}</p>
+        </div>
+        <div class="card">
+            <h4>Total Trips</h4>
+            <p>{{ tripCount }}</p>
         </div>
     </div>
-    <section class="recent-reservations">
-        <h4>Recent Reservations</h4>
-        <table>
-            <thead>
-                <tr>
-                    <th>User Name</th>
-                    <th>From</th>
-                    <th>To</th>
-                    <th>Seats</th>
-                    <th>Booking Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let reservation of recentReservations">
-                    <td>{{ reservation.username }}</td>
-                    <td>{{ reservation.start_location }}</td>
-                    <td>{{ reservation.end_location }}</td>
-                    <td>{{ reservation.number_of_seats }}</td>
-                    <td>{{ reservation.booking_date | date }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+
+    <h3>Recent Reservations</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Trip ID</th>
+                <th>Seats</th>
+                <th>Booking Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of recentReservations">
+                <td>{{ reservation.username }}</td>
+                <td>{{ reservation.trip_id }}</td>
+                <td>{{ reservation.number_of_seats }}</td>
+                <td>{{ reservation.booking_date | date }}</td>
+                <td>
+                    <button (click)="deleteReservation(reservation.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

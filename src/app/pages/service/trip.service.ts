@@ -60,6 +60,19 @@ export class TripService {
   deleteReservation(id: number): Observable<any> {
     return this.http.delete<any>(`${this.API_URL}/reservations/${id}`);
 }
+getBookingCount(): Observable<number> {
+  return this.http.get<number>(`${this.API_URL}/reservations/count`);
+}
+
+// ฟังก์ชันนับจำนวนเส้นทาง
+getRouteCount(): Observable<number> {
+  return this.http.get<number>(`${this.API_URL}/routes/count`);
+}
+
+// ฟังก์ชันนับจำนวนเที่ยวรถ
+getTripCount(): Observable<number> {
+  return this.http.get<number>(`${this.API_URL}/trips/count`);
+}
 
 }
 
