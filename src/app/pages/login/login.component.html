@@ -1,18 +1,18 @@
 <div class="login-wrapper">
   <div class="login-container">
-    <h2>Login</h2>
+    <h2>เข้าสู่ระบบ</h2>
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" [(ngModel)]="email" name="email" required>
+        <label for="email">อีเมล:</label>
+        <input type="email" class="form-control" id="email" placeholder="กรอกอีเมล" [(ngModel)]="email" name="email" required>
       </div>
       <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+        <label for="password">รหัสผ่าน:</label>
+        <input type="password" class="form-control" id="password" placeholder="กรอกรหัสผ่าน" [(ngModel)]="password" name="password" required>
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Login</button>
+      <button type="submit" class="btn btn-primary btn-block">เข้าสู่ระบบ</button>
       <div class="text-center mt-3">
-        <a href="#">Forgot Password?</a>
+        <a href="#">ลืมรหัสผ่าน ?</a>
       </div>
     </form>
   </div>

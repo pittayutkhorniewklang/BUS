@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 // สร้าง interface สำหรับโครงสร้างข้อมูลที่ได้จาก API
 interface LoginResponse {
   message: string;
-  username: string;  // เพิ่ม username
+  token: string;      // เพิ่ม token
+  username: string;
   role: string;
 }
 
@@ -32,10 +33,11 @@ export class LoginComponent {
           alert('Login successful');
           console.log('API Response:', response);
 
-          // เก็บข้อมูล username และ role ลงใน localStorage
+          // เก็บข้อมูล token, username และ role ลงใน localStorage
+          localStorage.setItem('authToken', response.token); // เก็บ token
           localStorage.setItem('user', JSON.stringify({
-            username: response.username,  // เก็บ username
-            role: response.role           // เก็บ role
+            username: response.username,
+            role: response.role
           }));
 
           // เปลี่ยนเส้นทางไปยังหน้าหลัก

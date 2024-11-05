@@ -1,48 +1,51 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http'; // นำเข้า HttpHeaders
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripService {
-  
-  private API_URL = 'http://localhost:3000/route'; // backend API URL
-  private TRIP_URL = 'http://localhost:3000/trip'; // URL ใหม่สำหรับ trips
-  private BOOK_URL = 'http://localhost:3000/booking';
-  
+
+  private API_URL = 'http://localhost:3000'; // Base URL ของ backend
 
   constructor(private http: HttpClient) { }
 
-  getRoutes(): Observable<any> {
-    return this.http.get(`${this.API_URL}`);
+  // ดึงข้อมูลเส้นทางทั้งหมด
+  getRoutes(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API_URL}/route`);
   }
 
+  // ดึงข้อมูลที่นั่งตาม tripId
   getSeatsByTripId(tripId: number): Observable<any> {
-    return this.http.get(`${this.API_URL}/seats/${tripId}`);
+    return this.http.get<any>(`${this.API_URL}/seats/${tripId}`);
   }
 
+  // ดึงข้อมูลเที่ยวรถทั้งหมด
   getTrips(): Observable<any> {
-    return this.http.get(`${this.API_URL}/trips`);
+    return this.http.get<any[]>(`${this.API_URL}/trip`);
   }
 
+  // เพิ่มเส้นทางใหม่
   addRoute(route: any): Observable<any> {
-    return this.http.post(`${this.API_URL}`, route);
+    return this.http.post<any>(`${this.API_URL}/route`, route);
   }
-  
+
+  // ลบข้อมูลเที่ยวรถ
   deleteTrip(id: number): Observable<any> {
-    return this.http.delete(`${this.TRIP_URL}/${id}`);
-  }
-  
-
-  // เมธอดใหม่สำหรับดึงข้อมูลเที่ยวรถ
-  getTripsFromApi(): Observable<any> {
-    return this.http.get(`${this.TRIP_URL}`); // ใช้ URL ใหม่
+    return this.http.delete<any>(`${this.API_URL}/trip/${id}`);
   }
 
+  // ดึงข้อมูลเที่ยวรถจาก API
+  getTripsFromApi(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API_URL}/trip`);
+  }
+
+  // จองที่นั่ง
   bookSeat(bookingData: any): Observable<any> {
-    return this.http.post(`${this.BOOK_URL}/book`, bookingData); // ใช้ URL สำหรับการจอง
-  }
-  
-}
+    const token = localStorage.getItem('authToken'); // ดึง token จาก localStorage
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`); // ตั้งค่า headers
 
+    return this.http.post<any>(`${this.API_URL}/booking/book`, bookingData, { headers }); // เพิ่ม headers ในคำขอ
+  }
+}
