@@ -26,27 +26,30 @@ export class LoginComponent {
       email: this.email,
       password: this.password
     };
-
+  
     this.http.post<LoginResponse>('http://localhost:3000/auth/login', loginData)
       .subscribe(
         (response: LoginResponse) => {
           alert('Login successful');
           console.log('API Response:', response);
-
-          // เก็บข้อมูล token, username และ role ลงใน localStorage
-          localStorage.setItem('authToken', response.token); // เก็บ token
+  
+          // Store token, username, and role in localStorage
+          localStorage.setItem('authToken', response.token);
           localStorage.setItem('user', JSON.stringify({
             username: response.username,
             role: response.role
           }));
-
-          // เปลี่ยนเส้นทางไปยังหน้าหลัก
-          this.router.navigate(['/']);
+  
+          // Redirect based on user role
+          if (response.role === 'admin') {
+            this.router.navigate(['/admin']);
+          } else {
+            this.router.navigate(['/']);
+          }
         },
         error => {
           alert('Login failed');
           console.error('Login error:', error);
         }
       );
-  }
-}
+  }}
