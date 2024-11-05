@@ -1,46 +1,35 @@
-<div class="dashboard">
-  <aside class="sidebar">
-      <h2>Dashboard</h2>
-      <nav>
-          <ul>
-              <li><a routerLink="/admin">Dashboard</a></li>
-              <li><a routerLink="/admin/routes">Manage Trips</a></li>
-              <li><a routerLink="/admin/user">Manage Users</a></li>
-              
-          </ul>
-      </nav>
-  </aside>
-  <main class="main-content">
-      <section class="user-management">
-          
-
-          <div class="reservation-table-container">
-              <h3>ข้อมูลการจองจากผู้ใช้</h3>
-              <table class="user-table">
-                  <thead>
-                      <tr>
-                          <th>ต้นทาง</th>
-                          <th>ปลายทาง</th>
-                          <th>เวลา</th>
-                          <th>วันที่</th>
-                          <th>ที่นั่งที่เลือก</th>
-                          <th>การจัดการ</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr *ngFor="let booking of reservationData">
-                          <td>{{ booking.from }}</td>
-                          <td>{{ booking.to }}</td>
-                          <td>{{ booking.time }}</td>
-                          <td>{{ booking.date }}</td>
-                          <td>{{ booking.selectedSeats.join(', ') }}</td>
-                          <td>
-                              <button class="btn-delete" (click)="deleteReservation(booking)">ลบ</button>
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div>
-      </section>
-  </main>
+<aside class="sidebar">
+    <h2>Dashboard</h2>
+    <nav>
+        <ul>
+            <li><a routerLink="/admin">Dashboard</a></li>
+            <li><a routerLink="/admin/routes">Manage Trips</a></li>
+            <li><a routerLink="/admin/user">Manage Users</a></li>
+        </ul>
+    </nav>
+</aside>
+<div class="main-content">
+    <section class="user-management">
+      <h3>Manage Users</h3>
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+              <button (click)="deleteUser(user.id)">ลบ</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 </div>

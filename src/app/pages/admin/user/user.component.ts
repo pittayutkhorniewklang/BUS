@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '../../service/shared.service';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-user',
@@ -7,25 +7,23 @@ import { SharedService } from '../../service/shared.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  reservationData: any[] = []; // ใช้เพื่อเก็บข้อมูลการจอง
+  users: any[] = [];
 
-  constructor(private sharedService: SharedService) {}
+  constructor(private userService: UserService) {}
 
-  ngOnInit() {
-    // ดึงข้อมูลการจองจาก SharedService
-    this.reservationData = this.sharedService.getReservationData();
-    console.log('Fetched reservation data:', this.reservationData); // ตรวจสอบข้อมูลที่ได้
+  ngOnInit(): void {
+    this.loadUsers();
   }
 
-  // เมธอดสำหรับลบการจอง
-  deleteReservation(booking: any) {
-    const confirmDelete = confirm('คุณต้องการลบการจองนี้หรือไม่?');
-    if (confirmDelete) {
-      const index = this.reservationData.indexOf(booking);
-      if (index > -1) {
-        this.reservationData.splice(index, 1); // ลบการจองจากรายการ
-      }
-      console.log('Deleted booking:', booking);
-    }
+  loadUsers(): void {
+    this.userService.getUsers().subscribe(users => {
+      this.users = users;
+    });
+  }
+
+  deleteUser(id: number): void {
+    this.userService.deleteUser(id).subscribe(() => {
+      this.loadUsers();
+    });
   }
 }

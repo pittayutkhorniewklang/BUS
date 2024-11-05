@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { RoutesComponent } from './pages/admin/routes/routes.component';
+import { ReserveComponent } from './pages/admin/reserve/reserve.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RoutesComponent } from './pages/admin/routes/routes.component';
     ReservationComponent,
     ProfileComponent,
     DashboardComponent,
-    RoutesComponent,    
+    RoutesComponent,
+    ReserveComponent,    
   ],
   imports: [
     BrowserModule,
