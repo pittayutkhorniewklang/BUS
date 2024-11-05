@@ -11,6 +11,7 @@ import { ReservationComponent } from './pages/reservation/reservation.component'
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { RoutesComponent } from './pages/admin/routes/routes.component';
 import { ReserveComponent } from './pages/admin/reserve/reserve.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 
 
@@ -25,7 +26,8 @@ const routes: Routes = [
  {path : 'reservation',component:ReservationComponent},
  {path : 'admin',component:DashboardComponent},
  {path : 'admin/routes',component:RoutesComponent},
- {path : 'admin/reserve',component:ReserveComponent}
+ {path : 'admin/reserve',component:ReserveComponent},
+ {path : 'payment',component:PaymentComponent},
 ];
 
 @NgModule({

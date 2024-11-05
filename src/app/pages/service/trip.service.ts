@@ -73,6 +73,9 @@ getRouteCount(): Observable<number> {
 getTripCount(): Observable<number> {
   return this.http.get<number>(`${this.API_URL}/trips/count`);
 }
+getRecentReservations(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.API_URL}/reservations/recent`);
+}
 
 }
 

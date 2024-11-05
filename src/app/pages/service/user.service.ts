@@ -21,10 +21,8 @@ export class UserService {
     return this.http.delete<any>(`${this.API_URL}/users/${id}`);
   }
 
-  getUserCount(): Observable<number> {
-    return this.http.get<any[]>(this.API_URL).pipe(
-      map(users => users.length) // นับจำนวนผู้ใช้
-    );
+  getRecentUsers(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API_URL}/recent`);
   }
 
 }

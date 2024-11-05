@@ -1,4 +1,3 @@
-// dashboard.component.ts
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { TripService } from '../../service/trip.service';
@@ -14,6 +13,7 @@ export class DashboardComponent implements OnInit {
   routeCount: number = 0;
   tripCount: number = 0;
   recentReservations: any[] = [];
+  recentUsers: any[] = [];
 
   constructor(private userService: UserService, private tripService: TripService) {}
 
@@ -23,42 +23,73 @@ export class DashboardComponent implements OnInit {
     this.getRouteCount();
     this.getTripCount();
     this.getRecentReservations();
+    this.getRecentUsers();
   }
 
   getUserCount() {
-    this.userService.getUserCount().subscribe(count => {
-      this.userCount = count;
+    this.userService.getUsers().subscribe(users => {
+      this.userCount = users.length;
     });
   }
 
   getBookingCount() {
-    this.tripService.getBookingCount().subscribe(count => {
-      this.bookingCount = count;
+    this.tripService.getReservations().subscribe(reservations => {
+      this.bookingCount = reservations.length;
     });
   }
 
   getRouteCount() {
-    this.tripService.getRouteCount().subscribe(count => {
-      this.routeCount = count;
+    this.tripService.getRoutes().subscribe(routes => {
+      this.routeCount = routes.length;
     });
   }
 
   getTripCount() {
-    this.tripService.getTripCount().subscribe(count => {
-      this.tripCount = count;
+    this.tripService.getTripsFromApi().subscribe(trips => {
+      this.tripCount = trips.length;
     });
   }
 
   getRecentReservations() {
     this.tripService.getReservations().subscribe(reservations => {
-      this.recentReservations = reservations.slice(0, 5); // แสดงเฉพาะ 5 รายการล่าสุด
+      this.recentReservations = reservations.slice(0, 5);
     });
+  }
+
+  getRecentUsers() {
+    this.userService.getUsers().subscribe(users => {
+      this.recentUsers = users.slice(0, 5);
+    });
+  }
+
+  viewReservation(id: number) {
+    // เพิ่มโค้ดสำหรับดูรายละเอียดการจอง
+  }
+
+  editReservation(id: number) {
+    // เพิ่มโค้ดสำหรับแก้ไขการจอง
   }
 
   deleteReservation(id: number) {
     if (confirm('Are you sure you want to delete this reservation?')) {
       this.tripService.deleteReservation(id).subscribe(() => {
-        this.getRecentReservations(); // โหลดรายการใหม่หลังจากการลบ
+        this.getRecentReservations();
+      });
+    }
+  }
+
+  viewUser(id: number) {
+    // เพิ่มโค้ดสำหรับดูรายละเอียดผู้ใช้
+  }
+
+  editUser(id: number) {
+    // เพิ่มโค้ดสำหรับแก้ไขผู้ใช้
+  }
+
+  deleteUser(id: number) {
+    if (confirm('Are you sure you want to delete this user?')) {
+      this.userService.deleteUser(id).subscribe(() => {
+        this.getRecentUsers();
       });
     }
   }

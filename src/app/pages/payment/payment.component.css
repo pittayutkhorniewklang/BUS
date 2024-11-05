@@ -1,0 +1,30 @@
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ให้สูงเต็มหน้าจอ */
+    text-align: center; /* จัดข้อความให้ตรงกลาง */
+  }
+  
+  img {
+    max-width: 100%; /* ทำให้ภาพไม่เกินขนาดที่กำหนด */
+  }
+  .btn-custom {
+    background-color: #007BFF; /* สีน้ำเงิน */
+    border: none; /* ไม่มีกรอบ */
+    color: white; /* สีตัวอักษร */
+    padding: 10px 20px; /* ระยะห่างภายใน */
+    text-align: center; /* จัดให้อยู่กลาง */
+    text-decoration: none; /* ไม่มีเส้นใต้ */
+    display: inline-block; /* แสดงในแถวเดียวกัน */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    margin: 20px 0; /* ระยะห่างด้านบนและล่าง */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ไปที่ปุ่ม */
+    border-radius: 5px; /* มุมโค้ง */
+    transition: background-color 0.3s; /* เอฟเฟกต์การเปลี่ยนสี */
+}
+
+.btn-custom:hover {
+    background-color: #0056b3; /* เปลี่ยนสีเมื่อชี้ไปที่ปุ่ม */
+}

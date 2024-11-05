@@ -18,6 +18,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { RoutesComponent } from './pages/admin/routes/routes.component';
 import { ReserveComponent } from './pages/admin/reserve/reserve.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReserveComponent } from './pages/admin/reserve/reserve.component';
     ProfileComponent,
     DashboardComponent,
     RoutesComponent,
-    ReserveComponent,    
+    ReserveComponent,
+    PaymentComponent,    
   ],
   imports: [
     BrowserModule,
